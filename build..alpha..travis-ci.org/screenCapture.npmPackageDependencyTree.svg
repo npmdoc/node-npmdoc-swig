@@ -1,0 +1,19 @@
+<svg height="254" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="254" fill="#555" width="720"></rect>
+<text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
+<tspan x="10" y="26">└─┬ swig@1.4.2 </tspan>
+<tspan x="10" y="42">  ├─┬ optimist@0.6.1 </tspan>
+<tspan x="10" y="58">  │ ├── minimist@0.0.10 </tspan>
+<tspan x="10" y="74">  │ └── wordwrap@0.0.3 </tspan>
+<tspan x="10" y="90">  └─┬ uglify-js@2.4.24 </tspan>
+<tspan x="10" y="106">    ├── async@0.2.10 </tspan>
+<tspan x="10" y="122">    ├─┬ source-map@0.1.34 </tspan>
+<tspan x="10" y="138">    │ └── amdefine@1.0.1 </tspan>
+<tspan x="10" y="154">    ├── uglify-to-browserify@1.0.2 </tspan>
+<tspan x="10" y="170">    └─┬ yargs@3.5.4 </tspan>
+<tspan x="10" y="186">      ├── camelcase@1.2.1 </tspan>
+<tspan x="10" y="202">      ├── decamelize@1.2.0 </tspan>
+<tspan x="10" y="218">      ├── window-size@0.1.0 </tspan>
+<tspan x="10" y="234">      └── wordwrap@0.0.2</tspan>
+</text>
+</svg>

@@ -1,0 +1,3544 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/paularmstrong/swig">swig (v1.4.2)</a>
+</h1>
+<h4>A simple, powerful, and extendable templating engine for node.js and browsers, similar to Django, Jinja2, and Twig.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.swig">module swig</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.Swig">
+            function <span class="apidocSignatureSpan">swig.</span>Swig
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.compile">
+            function <span class="apidocSignatureSpan">swig.</span>compile
+            <span class="apidocSignatureSpan">(source, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.compileFile">
+            function <span class="apidocSignatureSpan">swig.</span>compileFile
+            <span class="apidocSignatureSpan">(pathname, options, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.invalidateCache">
+            function <span class="apidocSignatureSpan">swig.</span>invalidateCache
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.parseFile">
+            function <span class="apidocSignatureSpan">swig.</span>parseFile
+            <span class="apidocSignatureSpan">(pathname, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.precompile">
+            function <span class="apidocSignatureSpan">swig.</span>precompile
+            <span class="apidocSignatureSpan">(source, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.render">
+            function <span class="apidocSignatureSpan">swig.</span>render
+            <span class="apidocSignatureSpan">(source, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.renderFile">
+            function <span class="apidocSignatureSpan">swig.</span>renderFile
+            <span class="apidocSignatureSpan">(pathName, locals, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.run">
+            function <span class="apidocSignatureSpan">swig.</span>run
+            <span class="apidocSignatureSpan">(tpl, locals, filepath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.setDefaultTZOffset">
+            function <span class="apidocSignatureSpan">swig.</span>setDefaultTZOffset
+            <span class="apidocSignatureSpan">(offset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.setDefaults">
+            function <span class="apidocSignatureSpan">swig.</span>setDefaults
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.setExtension">
+            function <span class="apidocSignatureSpan">swig.</span>setExtension
+            <span class="apidocSignatureSpan">(name, object)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.setFilter">
+            function <span class="apidocSignatureSpan">swig.</span>setFilter
+            <span class="apidocSignatureSpan">(name, method)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.setTag">
+            function <span class="apidocSignatureSpan">swig.</span>setTag
+            <span class="apidocSignatureSpan">(name, parse, compile, ends, blockLevel)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">swig.</span>dateformatter</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">swig.</span>filters</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">swig.</span>lexer</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">swig.</span>loaders</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">swig.</span>parser</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">swig.</span>utils</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">swig.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.swig.dateformatter">module swig.dateformatter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.A">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>A
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.B">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>B
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.D">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>D
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.DateZ">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>DateZ
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.F">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>F
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.G">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>G
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.H">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>H
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.L">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>L
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.M">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>M
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.N">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>N
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.O">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>O
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.S">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>S
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.U">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>U
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.W">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>W
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.Y">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>Y
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.Z">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>Z
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.a">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>a
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.c">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>c
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.d">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>d
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.g">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>g
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.h">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>h
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.i">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>i
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.j">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>j
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.l">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>l
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.m">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>m
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.n">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>n
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.o">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>o
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.r">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>r
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.s">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>s
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.t">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>t
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.w">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>w
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.y">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>y
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.dateformatter.z">
+            function <span class="apidocSignatureSpan">swig.dateformatter.</span>z
+            <span class="apidocSignatureSpan">(input, offset, abbr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">swig.dateformatter.</span>tzOffset</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.swig.filters">module swig.filters</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.filters.addslashes">
+            function <span class="apidocSignatureSpan">swig.filters.</span>addslashes
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.filters.capitalize">
+            function <span class="apidocSignatureSpan">swig.filters.</span>capitalize
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.filters.date">
+            function <span class="apidocSignatureSpan">swig.filters.</span>date
+            <span class="apidocSignatureSpan">(input, format, offset, abbr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.filters.default">
+            function <span class="apidocSignatureSpan">swig.filters.</span>default
+            <span class="apidocSignatureSpan">(input, def)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.filters.e">
+            function <span class="apidocSignatureSpan">swig.filters.</span>e
+            <span class="apidocSignatureSpan">(input, type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.filters.escape">
+            function <span class="apidocSignatureSpan">swig.filters.</span>escape
+            <span class="apidocSignatureSpan">(input, type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.filters.first">
+            function <span class="apidocSignatureSpan">swig.filters.</span>first
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.filters.groupBy">
+            function <span class="apidocSignatureSpan">swig.filters.</span>groupBy
+            <span class="apidocSignatureSpan">(input, key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.filters.join">
+            function <span class="apidocSignatureSpan">swig.filters.</span>join
+            <span class="apidocSignatureSpan">(input, glue)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.filters.json">
+            function <span class="apidocSignatureSpan">swig.filters.</span>json
+            <span class="apidocSignatureSpan">(input, indent)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.filters.json_encode">
+            function <span class="apidocSignatureSpan">swig.filters.</span>json_encode
+            <span class="apidocSignatureSpan">(input, indent)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.filters.last">
+            function <span class="apidocSignatureSpan">swig.filters.</span>last
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.filters.lower">
+            function <span class="apidocSignatureSpan">swig.filters.</span>lower
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.filters.raw">
+            function <span class="apidocSignatureSpan">swig.filters.</span>raw
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.filters.replace">
+            function <span class="apidocSignatureSpan">swig.filters.</span>replace
+            <span class="apidocSignatureSpan">(input, search, replacement, flags)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.filters.reverse">
+            function <span class="apidocSignatureSpan">swig.filters.</span>reverse
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.filters.safe">
+            function <span class="apidocSignatureSpan">swig.filters.</span>safe
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.filters.sort">
+            function <span class="apidocSignatureSpan">swig.filters.</span>sort
+            <span class="apidocSignatureSpan">(input, reverse)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.filters.striptags">
+            function <span class="apidocSignatureSpan">swig.filters.</span>striptags
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.filters.title">
+            function <span class="apidocSignatureSpan">swig.filters.</span>title
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.filters.uniq">
+            function <span class="apidocSignatureSpan">swig.filters.</span>uniq
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.filters.upper">
+            function <span class="apidocSignatureSpan">swig.filters.</span>upper
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.filters.url_decode">
+            function <span class="apidocSignatureSpan">swig.filters.</span>url_decode
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.filters.url_encode">
+            function <span class="apidocSignatureSpan">swig.filters.</span>url_encode
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.swig.lexer">module swig.lexer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.lexer.read">
+            function <span class="apidocSignatureSpan">swig.lexer.</span>read
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">swig.lexer.</span>types</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.swig.loaders">module swig.loaders</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.loaders.fs">
+            function <span class="apidocSignatureSpan">swig.loaders.</span>fs
+            <span class="apidocSignatureSpan">(basepath, encoding)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.loaders.memory">
+            function <span class="apidocSignatureSpan">swig.loaders.</span>memory
+            <span class="apidocSignatureSpan">(mapping, basepath)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.swig.parser">module swig.parser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.parser.compile">
+            function <span class="apidocSignatureSpan">swig.parser.</span>compile
+            <span class="apidocSignatureSpan">(template, parents, options, blockName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.parser.parse">
+            function <span class="apidocSignatureSpan">swig.parser.</span>parse
+            <span class="apidocSignatureSpan">(swig, source, opts, tags, filters)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.swig.utils">module swig.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.utils.each">
+            function <span class="apidocSignatureSpan">swig.utils.</span>each
+            <span class="apidocSignatureSpan">(obj, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.utils.endsWith">
+            function <span class="apidocSignatureSpan">swig.utils.</span>endsWith
+            <span class="apidocSignatureSpan">(str, suffix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.utils.extend">
+            function <span class="apidocSignatureSpan">swig.utils.</span>extend
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.utils.isArray">
+            function <span class="apidocSignatureSpan">swig.utils.</span>isArray
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.utils.keys">
+            function <span class="apidocSignatureSpan">swig.utils.</span>keys
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.utils.map">
+            function <span class="apidocSignatureSpan">swig.utils.</span>map
+            <span class="apidocSignatureSpan">(obj, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.utils.some">
+            function <span class="apidocSignatureSpan">swig.utils.</span>some
+            <span class="apidocSignatureSpan">(obj, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.utils.startsWith">
+            function <span class="apidocSignatureSpan">swig.utils.</span>startsWith
+            <span class="apidocSignatureSpan">(str, prefix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.utils.strip">
+            function <span class="apidocSignatureSpan">swig.utils.</span>strip
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.utils.throwError">
+            function <span class="apidocSignatureSpan">swig.utils.</span>throwError
+            <span class="apidocSignatureSpan">(message, line, file)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.swig" id="apidoc.module.swig">module swig</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.swig.Swig" id="apidoc.element.swig.Swig">
+        function <span class="apidocSignatureSpan">swig.</span>Swig
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Swig = function (opts) {
+  validateOptions(opts);
+  this.options = utils.extend({}, defaultOptions, opts || {});
+  this.cache = {};
+  this.extensions = {};
+  var self = this,
+    tags = _tags,
+    filters = _filters;
+
+<span class="apidocCodeCommentSpan">  /**
+   * Get combined locals context.
+   * @param  {?SwigOpts} [options] Swig options object.
+   * @return {object}         Locals context.
+   * @private
+   */
+</span>  function getLocals(options) {
+    if (!options || !options.locals) {
+      return self.options.locals;
+    }
+
+    return utils.extend({}, self.options.locals, options.locals);
+  }
+
+  /**
+   * Determine whether caching is enabled via the options provided and/or defaults
+   * @param  {SwigOpts} [options={}] Swig Options Object
+   * @return {boolean}
+   * @private
+   */
+  function shouldCache(options) {
+    options = options || {};
+    return (options.hasOwnProperty('cache') &amp;&amp; !options.cache) || !self.options.cache;
+  }
+
+  /**
+   * Get compiled template from the cache.
+   * @param  {string} key           Name of template.
+   * @return {object|undefined}     Template function and tokens.
+   * @private
+   */
+  function cacheGet(key, options) {
+    if (shouldCache(options)) {
+      return;
+    }
+
+    if (self.options.cache === 'memory') {
+      return self.cache[key];
+    }
+
+    return self.options.cache.get(key);
+  }
+
+  /**
+   * Store a template in the cache.
+   * @param  {string} key Name of template.
+   * @param  {object} val Template function and tokens.
+   * @return {undefined}
+   * @private
+   */
+  function cacheSet(key, options, val) {
+    if (shouldCache(options)) {
+      return;
+    }
+
+    if (self.options.cache === 'memory') {
+      self.cache[key] = val;
+      return;
+    }
+
+    self.options.cache.set(key, val);
+  }
+
+  /**
+   * Clears the in-memory template cache.
+   *
+   * @example
+   * swig.invalidateCache();
+   *
+   * @return {undefined}
+   */
+  this.invalidateCache = function () {
+    if (self.options.cache === 'memory') {
+      self.cache = {};
+    }
+  };
+
+  /**
+   * Add a custom filter for swig variables.
+   *
+   * @example
+   * function replaceMs(input) { return input.replace(/m/g, 'f'); }
+   * swig.setFilter('replaceMs', replaceMs);
+   * // =&gt; {{ "onomatopoeia"|replaceMs }}
+   * // =&gt; onofatopeia
+   *
+   * @param {string}    name    Name of filter, used in templates. &lt;strong&gt;Will&lt;/strong&gt; overwrite previously defined filters, if
+ using the same name.
+   * @param {function}  method  Function that acts against the input. See &lt;a href="/docs/filters/#custom"&gt;Custom Filters&lt;/a&gt; for
+ more information.
+   * @return {undefined}
+   */
+  this.setFilter = function (name, method) {
+    if (typeof method !== "function") {
+      throw new Error('Filter "' + name + '" is not a valid function.');
+    }
+    filters[name] = method;
+  };
+
+  /**
+   * Add a custom tag. To expose your own extensions to compiled template code, see &lt;code data-language="js"&gt;swig.setExtension&lt;/
+code&gt;.
+   *
+   * For a more in-depth explanation of writing custom tags, see &lt;a href="../extending/#tags"&gt;Custom Tags&lt;/a&gt;.
+   *
+   * @example
+   * var tacotag = require('./tacotag');
+   * swig.setTag('tacos', tacotag.parse, tacotag.compile, tacotag.ends, tacotag.blockLevel);
+   * // =&gt; {% tacos %}Make this be tacos.{% endtacos %}
+   * // =&gt; Tacos tacos tacos tacos.
+   *
+   * @param  {string} name      Tag name.
+   * @param  {function} parse   Method for parsing tokens.
+   * @param  {function} compile Method for compiling renderable output.
+   * @param  {boolean} [ends=false]     Whether or not this tag requires an &lt;i&gt;end&lt;/i&gt; tag.
+   * @param  {boolean} [blockLevel=false] If false, this tag will not be compiled outside of &lt;code&gt;block&lt;/code&gt; tags when extending
+ a parent template.
+   * @return {undefined}
+   */
+  this.setTag = function (name, parse, compile, ends, blockLevel) {
+    if (typeof parse !== 'function') {
+      throw new Error('Tag "' + name + '" parse method is not a valid function.');
+    }
+
+    if (typeof compile !== 'function') {
+      throw new Error('Tag "' + name + '" compile method is not a valid function.');
+    }
+
+    tags[name] = {
+      parse: parse,
+      compile: compi ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.compile" id="apidoc.element.swig.compile">
+        function <span class="apidocSignatureSpan">swig.</span>compile
+        <span class="apidocSignatureSpan">(source, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compile = function (source, options) {
+  var key = options ? options.filename : null,
+    cached = key ? cacheGet(key, options) : null,
+    context,
+    contextLength,
+    pre;
+
+  if (cached) {
+    return cached;
+  }
+
+  context = getLocals(options);
+  contextLength = utils.keys(context).length;
+  pre = this.precompile(source, options);
+
+  function compiled(locals) {
+    var lcls;
+    if (locals &amp;&amp; contextLength) {
+      lcls = utils.extend({}, context, locals);
+    } else if (locals &amp;&amp; !contextLength) {
+      lcls = locals;
+    } else if (!locals &amp;&amp; contextLength) {
+      lcls = context;
+    } else {
+      lcls = {};
+    }
+    return pre.tpl(self, lcls, filters, utils, efn);
+  }
+
+  utils.extend(compiled, pre.tokens);
+
+  if (key) {
+    cacheSet(key, options, compiled);
+  }
+
+  return compiled;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+     * @param {parserCompiler} compiler
+     * @param {array} [args] Array of parsed arguments on the for the token.
+     * @param {array} [content] Array of content within the token.
+     * @param {array} [parents] Array of parent templates for the current template context.
+     * @param {SwigOpts} [options] Swig Options Object
+     * @param {string} [blockName] Name of the direct block parent, if any.
+     */
+    o = token.<span class="apidocCodeKeywordSpan">compile</span>(exports.compile, token.args ? token.args.slice(0) : [], token.content
+ ? token.content.slice(0) : [], parents, options, blockName);
+    out += o || '';
+  });
+
+  return out;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.compileFile" id="apidoc.element.swig.compileFile">
+        function <span class="apidocSignatureSpan">swig.</span>compileFile
+        <span class="apidocSignatureSpan">(pathname, options, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compileFile = function (pathname, options, cb) {
+  var src, cached;
+
+  if (!options) {
+    options = {};
+  }
+
+  pathname = self.options.loader.resolve(pathname, options.resolveFrom);
+  if (!options.filename) {
+    options = utils.extend({ filename: pathname }, options);
+  }
+  cached = cacheGet(pathname, options);
+
+  if (cached) {
+    if (cb) {
+      cb(null, cached);
+      return;
+    }
+    return cached;
+  }
+
+  if (cb) {
+    self.options.loader.load(pathname, function (err, src) {
+      if (err) {
+        cb(err);
+        return;
+      }
+      var compiled;
+
+      try {
+        compiled = self.compile(src, options);
+      } catch (err2) {
+        cb(err2);
+        return;
+      }
+
+      cb(err, compiled);
+    });
+    return;
+  }
+
+  src = self.options.loader.load(pathname);
+  return self.compile(src, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+&lt;/ul&gt;
+```
+
+### node.js code
+
+```js
+var swig  = require('swig');
+var template = swig.<span class="apidocCodeKeywordSpan">compileFile</span>('/absolute/path/to/template.html');
+var output = template({
+    pagename: 'awesome people',
+    authors: ['Paul', 'Jim', 'Jane']
+});
+```
+
+### Output
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.invalidateCache" id="apidoc.element.swig.invalidateCache">
+        function <span class="apidocSignatureSpan">swig.</span>invalidateCache
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">invalidateCache = function () {
+  if (self.options.cache === 'memory') {
+    self.cache = {};
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.parseFile" id="apidoc.element.swig.parseFile">
+        function <span class="apidocSignatureSpan">swig.</span>parseFile
+        <span class="apidocSignatureSpan">(pathname, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseFile = function (pathname, options) {
+  var src;
+
+  if (!options) {
+    options = {};
+  }
+
+  pathname = self.options.loader.resolve(pathname, options.resolveFrom);
+
+  src = self.options.loader.load(pathname);
+
+  if (!options.filename) {
+    options = utils.extend({ filename: pathname }, options);
+  }
+
+  return self.parse(src, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.precompile" id="apidoc.element.swig.precompile">
+        function <span class="apidocSignatureSpan">swig.</span>precompile
+        <span class="apidocSignatureSpan">(source, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">precompile = function (source, options) {
+  var tokens = self.parse(source, options),
+    parents = getParents(tokens, options),
+    tpl,
+    err;
+
+  if (parents.length) {
+    // Remap the templates first-parent's tokens using this template's blocks.
+    tokens.tokens = remapBlocks(tokens.blocks, parents[0].tokens);
+    importNonBlocks(tokens.blocks, tokens.tokens);
+  }
+
+  try {
+    tpl = new Function('_swig', '_ctx', '_filters', '_utils', '_fn',
+      '  var _ext = _swig.extensions,\n' +
+      '    _output = "";\n' +
+      parser.compile(tokens, parents, options) + '\n' +
+      '  return _output;\n'
+      );
+  } catch (e) {
+    utils.throwError(e, null, options.filename);
+  }
+
+  return { tpl: tpl, tokens: tokens };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.render" id="apidoc.element.swig.render">
+        function <span class="apidocSignatureSpan">swig.</span>render
+        <span class="apidocSignatureSpan">(source, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">render = function (source, options) {
+  return self.compile(source, options)();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.renderFile" id="apidoc.element.swig.renderFile">
+        function <span class="apidocSignatureSpan">swig.</span>renderFile
+        <span class="apidocSignatureSpan">(pathName, locals, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">renderFile = function (pathName, locals, cb) {
+  if (cb) {
+    self.compileFile(pathName, {}, function (err, fn) {
+      var result;
+
+      if (err) {
+        cb(err);
+        return;
+      }
+
+      try {
+        result = fn(locals);
+      } catch (err2) {
+        cb(err2);
+        return;
+      }
+
+      cb(null, result);
+    });
+    return;
+  }
+
+  return self.compileFile(pathName)(locals);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.run" id="apidoc.element.swig.run">
+        function <span class="apidocSignatureSpan">swig.</span>run
+        <span class="apidocSignatureSpan">(tpl, locals, filepath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function (tpl, locals, filepath) {
+  var context = getLocals({ locals: locals });
+  if (filepath) {
+    cacheSet(filepath, {}, tpl);
+  }
+  return tpl(self, context, filters, utils, efn);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.setDefaultTZOffset" id="apidoc.element.swig.setDefaultTZOffset">
+        function <span class="apidocSignatureSpan">swig.</span>setDefaultTZOffset
+        <span class="apidocSignatureSpan">(offset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setDefaultTZOffset = function (offset) {
+  dateformatter.tzOffset = offset;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.setDefaults" id="apidoc.element.swig.setDefaults">
+        function <span class="apidocSignatureSpan">swig.</span>setDefaults
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setDefaults = function (options) {
+  validateOptions(options);
+  defaultInstance.options = utils.extend(defaultInstance.options, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.setExtension" id="apidoc.element.swig.setExtension">
+        function <span class="apidocSignatureSpan">swig.</span>setExtension
+        <span class="apidocSignatureSpan">(name, object)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setExtension = function (name, object) {
+  self.extensions[name] = object;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.setFilter" id="apidoc.element.swig.setFilter">
+        function <span class="apidocSignatureSpan">swig.</span>setFilter
+        <span class="apidocSignatureSpan">(name, method)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setFilter = function (name, method) {
+  if (typeof method !== "function") {
+    throw new Error('Filter "' + name + '" is not a valid function.');
+  }
+  filters[name] = method;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*
+* To disable auto-escaping on a custom filter, simply add a property to the filter method `safe = true;` and the output from this
+ will not be escaped, no matter what the global settings are for Swig.
+*
+* @typedef {function} Filter
+*
+* @example
+* // This filter will return 'bazbop' if the idx on the input is not 'foobar'
+* swig.<span class="apidocCodeKeywordSpan">setFilter</span>('foobar', function (input, idx) {
+*   return input[idx] === 'foobar' ? input[idx] : 'bazbop';
+* });
+* // myvar = ['foo', 'bar', 'baz', 'bop'];
+* // =&gt; {{ myvar|foobar(3) }}
+* // Since myvar[3] !== 'foobar', we render:
+* // =&gt; bazbop
+*
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.setTag" id="apidoc.element.swig.setTag">
+        function <span class="apidocSignatureSpan">swig.</span>setTag
+        <span class="apidocSignatureSpan">(name, parse, compile, ends, blockLevel)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setTag = function (name, parse, compile, ends, blockLevel) {
+  if (typeof parse !== 'function') {
+    throw new Error('Tag "' + name + '" parse method is not a valid function.');
+  }
+
+  if (typeof compile !== 'function') {
+    throw new Error('Tag "' + name + '" compile method is not a valid function.');
+  }
+
+  tags[name] = {
+    parse: parse,
+    compile: compile,
+    ends: ends || false,
+    block: !!blockLevel
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.swig.dateformatter" id="apidoc.module.swig.dateformatter">module swig.dateformatter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.A" id="apidoc.element.swig.dateformatter.A">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>A
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">A = function (input) {
+  return input.getHours() &lt; 12 ? 'AM' : 'PM';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.B" id="apidoc.element.swig.dateformatter.B">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>B
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">B = function (input) {
+  var hours = input.getUTCHours(), beats;
+  hours = (hours === 23) ? 0 : hours + 1;
+  beats = Math.abs(((((hours * 60) + input.getUTCMinutes()) * 60) + input.getUTCSeconds()) / 86.4).toFixed(0);
+  return ('000'.concat(beats).slice(beats.length));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.D" id="apidoc.element.swig.dateformatter.D">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>D
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">D = function (input) {
+  return _days.abbr[input.getDay()];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.DateZ" id="apidoc.element.swig.dateformatter.DateZ">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>DateZ
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">DateZ = function () {
+  var members = {
+      'default': ['getUTCDate', 'getUTCDay', 'getUTCFullYear', 'getUTCHours', 'getUTCMilliseconds', 'getUTCMinutes', 'getUTCMonth
+', 'getUTCSeconds', 'toISOString', 'toGMTString', 'toUTCString', 'valueOf', 'getTime'],
+      z: ['getDate', 'getDay', 'getFullYear', 'getHours', 'getMilliseconds', 'getMinutes', 'getMonth', 'getSeconds', 'getYear', '
+toDateString', 'toLocaleDateString', 'toLocaleTimeString']
+    },
+    d = this;
+
+  d.date = d.dateZ = (arguments.length &gt; 1) ? new Date(Date.UTC.apply(Date, arguments) + ((new Date()).getTimezoneOffset() * 60000
+)) : (arguments.length === 1) ? new Date(new Date(arguments['0'])) : new Date();
+
+  d.timezoneOffset = d.dateZ.getTimezoneOffset();
+
+  utils.each(members.z, function (name) {
+    d[name] = function () {
+      return d.dateZ[name]();
+    };
+  });
+  utils.each(members['default'], function (name) {
+    d[name] = function () {
+      return d.date[name]();
+    };
+  });
+
+  this.setTimezoneOffset(exports.tzOffset);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return (d % 10 === 1 &amp;&amp; d !== 11 ? 'st' : (d % 10 === 2 &amp;&amp; d !== 12 ? 'nd' : (d % 10 ===
+3 &amp;&amp; d !== 13 ? 'rd' : 'th')));
+};
+exports.w = function (input) {
+  return input.getDay();
+};
+exports.z = function (input, offset, abbr) {
+  var year = input.getFullYear(),
+    e = new exports.<span class="apidocCodeKeywordSpan">DateZ</span>(year, input.getMonth(), input.getDate(), 12, 0, 0),
+    d = new exports.DateZ(year, 0, 1, 12, 0, 0);
+
+  e.setTimezoneOffset(offset, abbr);
+  d.setTimezoneOffset(offset, abbr);
+  return Math.round((e - d) / 86400000);
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.F" id="apidoc.element.swig.dateformatter.F">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>F
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">F = function (input) {
+  return _months.full[input.getMonth()];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.G" id="apidoc.element.swig.dateformatter.G">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>G
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">G = function (input) {
+  return input.getHours();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.H" id="apidoc.element.swig.dateformatter.H">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>H
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">H = function (input) {
+  var h = input.getHours();
+  return (h &lt; 10 ? '0' : '') + h;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.L" id="apidoc.element.swig.dateformatter.L">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>L
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">L = function (input) {
+  return new Date(input.getFullYear(), 1, 29).getDate() === 29;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.M" id="apidoc.element.swig.dateformatter.M">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>M
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">M = function (input) {
+  return _months.abbr[input.getMonth()];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.N" id="apidoc.element.swig.dateformatter.N">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>N
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">N = function (input) {
+  var d = input.getDay();
+  return (d &gt;= 1) ? d : 7;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.O" id="apidoc.element.swig.dateformatter.O">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>O
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">O = function (input) {
+  var tz = input.getTimezoneOffset();
+  return (tz &lt; 0 ? '-' : '+') + (tz / 60 &lt; 10 ? '0' : '') + Math.abs((tz / 60)) + '00';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.S" id="apidoc.element.swig.dateformatter.S">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>S
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">S = function (input) {
+  var d = input.getDate();
+  return (d % 10 === 1 &amp;&amp; d !== 11 ? 'st' : (d % 10 === 2 &amp;&amp; d !== 12 ? 'nd' : (d % 10 === 3 &amp;&amp; d !== 13 ? 'rd' : 'th')));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.U" id="apidoc.element.swig.dateformatter.U">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>U
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">U = function (input) {
+  return input.getTime() / 1000;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.W" id="apidoc.element.swig.dateformatter.W">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>W
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">W = function (input) {
+  var target = new Date(input.valueOf()),
+    dayNr = (input.getDay() + 6) % 7,
+    fThurs;
+
+  target.setDate(target.getDate() - dayNr + 3);
+  fThurs = target.valueOf();
+  target.setMonth(0, 1);
+  if (target.getDay() !== 4) {
+    target.setMonth(0, 1 + ((4 - target.getDay()) + 7) % 7);
+  }
+
+  return 1 + Math.ceil((fThurs - target) / 604800000);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.Y" id="apidoc.element.swig.dateformatter.Y">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>Y
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Y = function (input) {
+  return input.getFullYear();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.Z" id="apidoc.element.swig.dateformatter.Z">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>Z
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Z = function (input) {
+  return input.getTimezoneOffset() * 60;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.a" id="apidoc.element.swig.dateformatter.a">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>a
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">a = function (input) {
+  return input.getHours() &lt; 12 ? 'am' : 'pm';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.c" id="apidoc.element.swig.dateformatter.c">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>c
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">c = function (input) {
+  return input.toISOString();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.d" id="apidoc.element.swig.dateformatter.d">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>d
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">d = function (input) {
+  return (input.getDate() &lt; 10 ? '0' : '') + input.getDate();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.g" id="apidoc.element.swig.dateformatter.g">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>g
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">g = function (input) {
+  var h = input.getHours();
+  return h === 0 ? 12 : (h &gt; 12 ? h - 12 : h);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.h" id="apidoc.element.swig.dateformatter.h">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>h
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">h = function (input) {
+  var h = input.getHours();
+  return ((h &lt; 10 || (12 &lt; h &amp;&amp; 22 &gt; h)) ? '0' : '') + ((h &lt; 12) ? h : h - 12);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.i" id="apidoc.element.swig.dateformatter.i">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>i
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">i = function (input) {
+  var m = input.getMinutes();
+  return (m &lt; 10 ? '0' : '') + m;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.j" id="apidoc.element.swig.dateformatter.j">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>j
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">j = function (input) {
+  return input.getDate();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.l" id="apidoc.element.swig.dateformatter.l">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>l
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">l = function (input) {
+  return _days.full[input.getDay()];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.m" id="apidoc.element.swig.dateformatter.m">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>m
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">m = function (input) {
+  return (input.getMonth() &lt; 9 ? '0' : '') + (input.getMonth() + 1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.n" id="apidoc.element.swig.dateformatter.n">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>n
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">n = function (input) {
+  return input.getMonth() + 1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.o" id="apidoc.element.swig.dateformatter.o">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>o
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">o = function (input) {
+  var target = new Date(input.valueOf());
+  target.setDate(target.getDate() - ((input.getDay() + 6) % 7) + 3);
+  return target.getFullYear();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.r" id="apidoc.element.swig.dateformatter.r">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>r
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">r = function (input) {
+  return input.toUTCString();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.s" id="apidoc.element.swig.dateformatter.s">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>s
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">s = function (input) {
+  var s = input.getSeconds();
+  return (s &lt; 10 ? '0' : '') + s;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.t" id="apidoc.element.swig.dateformatter.t">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>t
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">t = function (input) {
+  return 32 - (new Date(input.getFullYear(), input.getMonth(), 32).getDate());
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.w" id="apidoc.element.swig.dateformatter.w">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>w
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">w = function (input) {
+  return input.getDay();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.y" id="apidoc.element.swig.dateformatter.y">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>y
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">y = function (input) {
+  return (input.getFullYear().toString()).substr(2);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.dateformatter.z" id="apidoc.element.swig.dateformatter.z">
+        function <span class="apidocSignatureSpan">swig.dateformatter.</span>z
+        <span class="apidocSignatureSpan">(input, offset, abbr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">z = function (input, offset, abbr) {
+  var year = input.getFullYear(),
+    e = new exports.DateZ(year, input.getMonth(), input.getDate(), 12, 0, 0),
+    d = new exports.DateZ(year, 0, 1, 12, 0, 0);
+
+  e.setTimezoneOffset(offset, abbr);
+  d.setTimezoneOffset(offset, abbr);
+  return Math.round((e - d) / 86400000);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.swig.filters" id="apidoc.module.swig.filters">module swig.filters</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.swig.filters.addslashes" id="apidoc.element.swig.filters.addslashes">
+        function <span class="apidocSignatureSpan">swig.filters.</span>addslashes
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addslashes = function (input) {
+  var out = iterateFilter.apply(exports.addslashes, arguments);
+  if (out !== undefined) {
+    return out;
+  }
+
+  return input.replace(/\\/g, '\\\\').replace(/\'/g, "\\'").replace(/\"/g, '\\"');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.filters.capitalize" id="apidoc.element.swig.filters.capitalize">
+        function <span class="apidocSignatureSpan">swig.filters.</span>capitalize
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">capitalize = function (input) {
+  var out = iterateFilter.apply(exports.capitalize, arguments);
+  if (out !== undefined) {
+    return out;
+  }
+
+  return input.toString().charAt(0).toUpperCase() + input.toString().substr(1).toLowerCase();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.filters.date" id="apidoc.element.swig.filters.date">
+        function <span class="apidocSignatureSpan">swig.filters.</span>date
+        <span class="apidocSignatureSpan">(input, format, offset, abbr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">date = function (input, format, offset, abbr) {
+  var l = format.length,
+    date = new dateFormatter.DateZ(input),
+    cur,
+    i = 0,
+    out = '';
+
+  if (offset) {
+    date.setTimezoneOffset(offset, abbr);
+  }
+
+  for (i; i &lt; l; i += 1) {
+    cur = format.charAt(i);
+    if (cur === '\\') {
+      i += 1;
+      out += (i &lt; l) ? format.charAt(i) : cur;
+    } else if (dateFormatter.hasOwnProperty(cur)) {
+      out += dateFormatter[cur](date, offset, abbr);
+    } else {
+      out += cur;
+    }
+  }
+  return out;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.filters.default" id="apidoc.element.swig.filters.default">
+        function <span class="apidocSignatureSpan">swig.filters.</span>default
+        <span class="apidocSignatureSpan">(input, def)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">default = function (input, def) {
+  return (typeof input !== 'undefined' &amp;&amp; (input || typeof input === 'number')) ? input : def;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.filters.e" id="apidoc.element.swig.filters.e">
+        function <span class="apidocSignatureSpan">swig.filters.</span>e
+        <span class="apidocSignatureSpan">(input, type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">e = function (input, type) {
+  var out = iterateFilter.apply(exports.escape, arguments),
+    inp = input,
+    i = 0,
+    code;
+
+  if (out !== undefined) {
+    return out;
+  }
+
+  if (typeof input !== 'string') {
+    return input;
+  }
+
+  out = '';
+
+  switch (type) {
+  case 'js':
+    inp = inp.replace(/\\/g, '\\u005C');
+    for (i; i &lt; inp.length; i += 1) {
+      code = inp.charCodeAt(i);
+      if (code &lt; 32) {
+        code = code.toString(16).toUpperCase();
+        code = (code.length &lt; 2) ? '0' + code : code;
+        out += '\\u00' + code;
+      } else {
+        out += inp[i];
+      }
+    }
+    return out.replace(/&amp;/g, '\\u0026')
+      .replace(/&lt;/g, '\\u003C')
+      .replace(/&gt;/g, '\\u003E')
+      .replace(/\'/g, '\\u0027')
+      .replace(/"/g, '\\u0022')
+      .replace(/\=/g, '\\u003D')
+      .replace(/-/g, '\\u002D')
+      .replace(/;/g, '\\u003B');
+
+  default:
+    return inp.replace(/&amp;(?!amp;|lt;|gt;|quot;|#39;)/g, '&amp;amp;')
+      .replace(/&lt;/g, '&amp;lt;')
+      .replace(/&gt;/g, '&amp;gt;')
+      .replace(/"/g, '&amp;quot;')
+      .replace(/'/g, '&amp;#39;');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.filters.escape" id="apidoc.element.swig.filters.escape">
+        function <span class="apidocSignatureSpan">swig.filters.</span>escape
+        <span class="apidocSignatureSpan">(input, type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">escape = function (input, type) {
+  var out = iterateFilter.apply(exports.escape, arguments),
+    inp = input,
+    i = 0,
+    code;
+
+  if (out !== undefined) {
+    return out;
+  }
+
+  if (typeof input !== 'string') {
+    return input;
+  }
+
+  out = '';
+
+  switch (type) {
+  case 'js':
+    inp = inp.replace(/\\/g, '\\u005C');
+    for (i; i &lt; inp.length; i += 1) {
+      code = inp.charCodeAt(i);
+      if (code &lt; 32) {
+        code = code.toString(16).toUpperCase();
+        code = (code.length &lt; 2) ? '0' + code : code;
+        out += '\\u00' + code;
+      } else {
+        out += inp[i];
+      }
+    }
+    return out.replace(/&amp;/g, '\\u0026')
+      .replace(/&lt;/g, '\\u003C')
+      .replace(/&gt;/g, '\\u003E')
+      .replace(/\'/g, '\\u0027')
+      .replace(/"/g, '\\u0022')
+      .replace(/\=/g, '\\u003D')
+      .replace(/-/g, '\\u002D')
+      .replace(/;/g, '\\u003B');
+
+  default:
+    return inp.replace(/&amp;(?!amp;|lt;|gt;|quot;|#39;)/g, '&amp;amp;')
+      .replace(/&lt;/g, '&amp;lt;')
+      .replace(/&gt;/g, '&amp;gt;')
+      .replace(/"/g, '&amp;quot;')
+      .replace(/'/g, '&amp;#39;');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.filters.first" id="apidoc.element.swig.filters.first">
+        function <span class="apidocSignatureSpan">swig.filters.</span>first
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">first = function (input) {
+  if (typeof input === 'object' &amp;&amp; !utils.isArray(input)) {
+    var keys = utils.keys(input);
+    return input[keys[0]];
+  }
+
+  if (typeof input === 'string') {
+    return input.substr(0, 1);
+  }
+
+  return input[0];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.filters.groupBy" id="apidoc.element.swig.filters.groupBy">
+        function <span class="apidocSignatureSpan">swig.filters.</span>groupBy
+        <span class="apidocSignatureSpan">(input, key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">groupBy = function (input, key) {
+  if (!utils.isArray(input)) {
+    return input;
+  }
+
+  var out = {};
+
+  utils.each(input, function (value) {
+    if (!value.hasOwnProperty(key)) {
+      return;
+    }
+
+    var keyname = value[key],
+      newVal = utils.extend({}, value);
+    delete value[key];
+
+    if (!out[keyname]) {
+      out[keyname] = [];
+    }
+
+    out[keyname].push(value);
+  });
+
+  return out;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.filters.join" id="apidoc.element.swig.filters.join">
+        function <span class="apidocSignatureSpan">swig.filters.</span>join
+        <span class="apidocSignatureSpan">(input, glue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">join = function (input, glue) {
+  if (utils.isArray(input)) {
+    return input.join(glue);
+  }
+
+  if (typeof input === 'object') {
+    var out = [];
+    utils.each(input, function (value) {
+      out.push(value);
+    });
+    return out.join(glue);
+  }
+  return input;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ *
+ * @param  {*}  input
+ * @param  {string} glue    String value to join items together.
+ * @return {string}
+ */
+exports.join = function (input, glue) {
+if (utils.isArray(input)) {
+  return input.<span class="apidocCodeKeywordSpan">join</span>(glue);
+}
+
+if (typeof input === 'object') {
+  var out = [];
+  utils.each(input, function (value) {
+    out.push(value);
+  });
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.filters.json" id="apidoc.element.swig.filters.json">
+        function <span class="apidocSignatureSpan">swig.filters.</span>json
+        <span class="apidocSignatureSpan">(input, indent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">json = function (input, indent) {
+  return JSON.stringify(input, null, indent || 0);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.filters.json_encode" id="apidoc.element.swig.filters.json_encode">
+        function <span class="apidocSignatureSpan">swig.filters.</span>json_encode
+        <span class="apidocSignatureSpan">(input, indent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">json_encode = function (input, indent) {
+  return JSON.stringify(input, null, indent || 0);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.filters.last" id="apidoc.element.swig.filters.last">
+        function <span class="apidocSignatureSpan">swig.filters.</span>last
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">last = function (input) {
+  if (typeof input === 'object' &amp;&amp; !utils.isArray(input)) {
+    var keys = utils.keys(input);
+    return input[keys[keys.length - 1]];
+  }
+
+  if (typeof input === 'string') {
+    return input.charAt(input.length - 1);
+  }
+
+  return input[input.length - 1];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.filters.lower" id="apidoc.element.swig.filters.lower">
+        function <span class="apidocSignatureSpan">swig.filters.</span>lower
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lower = function (input) {
+  var out = iterateFilter.apply(exports.lower, arguments);
+  if (out !== undefined) {
+    return out;
+  }
+
+  return input.toString().toLowerCase();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.filters.raw" id="apidoc.element.swig.filters.raw">
+        function <span class="apidocSignatureSpan">swig.filters.</span>raw
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">raw = function (input) {
+  return exports.safe(input);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.filters.replace" id="apidoc.element.swig.filters.replace">
+        function <span class="apidocSignatureSpan">swig.filters.</span>replace
+        <span class="apidocSignatureSpan">(input, search, replacement, flags)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">replace = function (input, search, replacement, flags) {
+  var r = new RegExp(search, flags);
+  return input.replace(r, replacement);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*/
+exports.addslashes = function (input) {
+ var out = iterateFilter.apply(exports.addslashes, arguments);
+ if (out !== undefined) {
+   return out;
+ }
+
+ return input.<span class="apidocCodeKeywordSpan">replace</span>(/\\/g, '\\\\').replace(/\'/g, "\\'"
+;).replace(/\"/g, '\\"');
+};
+
+/**
+* Upper-case the first letter of the input and lower-case the rest.
+*
+* @example
+* {{ "i like Burritos"|capitalize }}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.filters.reverse" id="apidoc.element.swig.filters.reverse">
+        function <span class="apidocSignatureSpan">swig.filters.</span>reverse
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reverse = function (input) {
+  return exports.sort(input, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  switch (typeof input) {
+  case 'object':
+    out = utils.keys(input).sort();
+    break;
+  case 'string':
+    out = input.split('');
+    if (reverse) {
+      return out.<span class="apidocCodeKeywordSpan">reverse</span>().join('');
+    }
+    return out.sort().join('');
+  }
+}
+
+if (out &amp;&amp; reverse) {
+  return out.reverse();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.filters.safe" id="apidoc.element.swig.filters.safe">
+        function <span class="apidocSignatureSpan">swig.filters.</span>safe
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">safe = function (input) {
+  // This is a magic filter. Its logic is hard-coded into Swig's parser.
+  return input;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ return input.toString().toLowerCase();
+};
+
+/**
+* Deprecated in favor of &lt;a href="#safe"&gt;safe&lt;/a&gt;.
+*/
+exports.raw = function (input) {
+ return exports.<span class="apidocCodeKeywordSpan">safe</span>(input);
+};
+exports.raw.safe = true;
+
+/**
+* Returns a new string with the matched search pattern replaced by the given replacement string. Uses JavaScript's built-in
+ String.replace() method.
+*
+* @example
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.filters.sort" id="apidoc.element.swig.filters.sort">
+        function <span class="apidocSignatureSpan">swig.filters.</span>sort
+        <span class="apidocSignatureSpan">(input, reverse)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sort = function (input, reverse) {
+  var out;
+  if (utils.isArray(input)) {
+    out = input.sort();
+  } else {
+    switch (typeof input) {
+    case 'object':
+      out = utils.keys(input).sort();
+      break;
+    case 'string':
+      out = input.split('');
+      if (reverse) {
+        return out.reverse().join('');
+      }
+      return out.sort().join('');
+    }
+  }
+
+  if (out &amp;&amp; reverse) {
+    return out.reverse();
+  }
+
+  return out || input;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* {{ val|reverse }}
+* // =&gt; 3,2,1
+*
+* @param  {array}  input
+* @return {array}        Reversed array. The original input object is returned if it was not an array.
+*/
+exports.reverse = function (input) {
+ return exports.<span class="apidocCodeKeywordSpan">sort</span>(input, true);
+};
+
+/**
+* Forces the input to not be auto-escaped. Use this only on content that you know is safe to be rendered on your page.
+*
+* @example
+* // my_var = "&lt;p&gt;Stuff&lt;/p&gt;";
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.filters.striptags" id="apidoc.element.swig.filters.striptags">
+        function <span class="apidocSignatureSpan">swig.filters.</span>striptags
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">striptags = function (input) {
+  var out = iterateFilter.apply(exports.striptags, arguments);
+  if (out !== undefined) {
+    return out;
+  }
+
+  return input.toString().replace(/(&lt;([^&gt;]+)&gt;)/ig, '');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.filters.title" id="apidoc.element.swig.filters.title">
+        function <span class="apidocSignatureSpan">swig.filters.</span>title
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">title = function (input) {
+  var out = iterateFilter.apply(exports.title, arguments);
+  if (out !== undefined) {
+    return out;
+  }
+
+  return input.toString().replace(/\w\S*/g, function (str) {
+    return str.charAt(0).toUpperCase() + str.substr(1).toLowerCase();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.filters.uniq" id="apidoc.element.swig.filters.uniq">
+        function <span class="apidocSignatureSpan">swig.filters.</span>uniq
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uniq = function (input) {
+  var result;
+
+  if (!input || !utils.isArray(input)) {
+    return '';
+  }
+
+  result = [];
+  utils.each(input, function (v) {
+    if (result.indexOf(v) === -1) {
+      result.push(v);
+    }
+  });
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.filters.upper" id="apidoc.element.swig.filters.upper">
+        function <span class="apidocSignatureSpan">swig.filters.</span>upper
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">upper = function (input) {
+  var out = iterateFilter.apply(exports.upper, arguments);
+  if (out !== undefined) {
+    return out;
+  }
+
+  return input.toString().toUpperCase();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.filters.url_decode" id="apidoc.element.swig.filters.url_decode">
+        function <span class="apidocSignatureSpan">swig.filters.</span>url_decode
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">url_decode = function (input) {
+  var out = iterateFilter.apply(exports.url_decode, arguments);
+  if (out !== undefined) {
+    return out;
+  }
+  return decodeURIComponent(input);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.filters.url_encode" id="apidoc.element.swig.filters.url_encode">
+        function <span class="apidocSignatureSpan">swig.filters.</span>url_encode
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">url_encode = function (input) {
+  var out = iterateFilter.apply(exports.url_encode, arguments);
+  if (out !== undefined) {
+    return out;
+  }
+  return encodeURIComponent(input);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.swig.lexer" id="apidoc.module.swig.lexer">module swig.lexer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.swig.lexer.read" id="apidoc.element.swig.lexer.read">
+        function <span class="apidocSignatureSpan">swig.lexer.</span>read
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">read = function (str) {
+  var offset = 0,
+    tokens = [],
+    substr,
+    match;
+  while (offset &lt; str.length) {
+    substr = str.substring(offset);
+    match = reader(substr);
+    offset += match.length;
+    tokens.push(match);
+  }
+  return tokens;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   * Parse a variable.
+   * @param  {string} str  String contents of the variable, between &lt;i&gt;{{&lt;/i&gt; and &lt;i&gt;}}&lt;/i&gt;
+;
+   * @param  {number} line The line number that this variable starts on.
+   * @return {VarToken}      Parsed variable token object.
+   * @private
+   */
+  function parseVariable(str, line) {
+var tokens = lexer.<span class="apidocCodeKeywordSpan">read</span>(utils.strip(str)),
+  parser,
+  out;
+
+parser = new TokenParser(tokens, filters, escape, line, opts.filename);
+out = parser.parse().join('');
+
+if (parser.state.length) {
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.swig.loaders" id="apidoc.module.swig.loaders">module swig.loaders</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.swig.loaders.fs" id="apidoc.element.swig.loaders.fs">
+        function <span class="apidocSignatureSpan">swig.loaders.</span>fs
+        <span class="apidocSignatureSpan">(basepath, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fs = function (basepath, encoding) {
+  var ret = {};
+
+  encoding = encoding || 'utf8';
+  basepath = (basepath) ? path.normalize(basepath) : null;
+
+<span class="apidocCodeCommentSpan">  /**
+   * Resolves &lt;var&gt;to&lt;/var&gt; to an absolute path or unique identifier. This is used for building correct, normalized, and absolute
+ paths to a given template.
+   * @alias resolve
+   * @param  {string} to        Non-absolute identifier or pathname to a file.
+   * @param  {string} [from]    If given, should attempt to find the &lt;var&gt;to&lt;/var&gt; path in relation to this given, known path.
+   * @return {string}
+   */
+</span>  ret.resolve = function (to, from) {
+    if (basepath) {
+      from = basepath;
+    } else {
+      from = (from) ? path.dirname(from) : process.cwd();
+    }
+    return path.resolve(from, to);
+  };
+
+  /**
+   * Loads a single template. Given a unique &lt;var&gt;identifier&lt;/var&gt; found by the &lt;var&gt;resolve&lt;/var&gt; method this should return the
+ given template.
+   * @alias load
+   * @param  {string}   identifier  Unique identifier of a template (possibly an absolute path).
+   * @param  {function} [cb]        Asynchronous callback function. If not provided, this method should run synchronously.
+   * @return {string}               Template source string.
+   */
+  ret.load = function (identifier, cb) {
+    if (!fs || (cb &amp;&amp; !fs.readFile) || !fs.readFileSync) {
+      throw new Error('Unable to find file ' + identifier + ' because there is no filesystem to read from.');
+    }
+
+    identifier = ret.resolve(identifier);
+
+    if (cb) {
+      fs.readFile(identifier, encoding, cb);
+      return;
+    }
+    return fs.readFileSync(identifier, encoding);
+  };
+
+  return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.loaders.memory" id="apidoc.element.swig.loaders.memory">
+        function <span class="apidocSignatureSpan">swig.loaders.</span>memory
+        <span class="apidocSignatureSpan">(mapping, basepath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">memory = function (mapping, basepath) {
+  var ret = {};
+
+  basepath = (basepath) ? path.normalize(basepath) : null;
+
+<span class="apidocCodeCommentSpan">  /**
+   * Resolves &lt;var&gt;to&lt;/var&gt; to an absolute path or unique identifier. This is used for building correct, normalized, and absolute
+ paths to a given template.
+   * @alias resolve
+   * @param  {string} to        Non-absolute identifier or pathname to a file.
+   * @param  {string} [from]    If given, should attempt to find the &lt;var&gt;to&lt;/var&gt; path in relation to this given, known path.
+   * @return {string}
+   */
+</span>  ret.resolve = function (to, from) {
+    if (basepath) {
+      from = basepath;
+    } else {
+      from = (from) ? path.dirname(from) : '/';
+    }
+    return path.resolve(from, to);
+  };
+
+  /**
+   * Loads a single template. Given a unique &lt;var&gt;identifier&lt;/var&gt; found by the &lt;var&gt;resolve&lt;/var&gt; method this should return the
+ given template.
+   * @alias load
+   * @param  {string}   identifier  Unique identifier of a template (possibly an absolute path).
+   * @param  {function} [cb]        Asynchronous callback function. If not provided, this method should run synchronously.
+   * @return {string}               Template source string.
+   */
+  ret.load = function (pathname, cb) {
+    var src, paths;
+
+    paths = [pathname, pathname.replace(/^(\/|\\)/, '')];
+
+    src = mapping[paths[0]] || mapping[paths[1]];
+    if (!src) {
+      utils.throwError('Unable to find template "' + pathname + '".');
+    }
+
+    if (cb) {
+      cb(null, src);
+      return;
+    }
+    return src;
+  };
+
+  return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.swig.parser" id="apidoc.module.swig.parser">module swig.parser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.swig.parser.compile" id="apidoc.element.swig.parser.compile">
+        function <span class="apidocSignatureSpan">swig.parser.</span>compile
+        <span class="apidocSignatureSpan">(template, parents, options, blockName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compile = function (template, parents, options, blockName) {
+  var out = '',
+    tokens = utils.isArray(template) ? template : template.tokens;
+
+  utils.each(tokens, function (token) {
+    var o;
+    if (typeof token === 'string') {
+      out += '_output += "' + token.replace(/\\/g, '\\\\').replace(/\n|\r/g, '\\n').replace(/"/g, '\\"') + '";\n';
+      return;
+    }
+
+<span class="apidocCodeCommentSpan">    /**
+     * Compile callback for VarToken and TagToken objects.
+     * @callback compile
+     *
+     * @example
+     * exports.compile = function (compiler, args, content, parents, options, blockName) {
+     *   if (args[0] === 'foo') {
+     *     return compiler(content, parents, options, blockName) + '\n';
+     *   }
+     *   return '_output += "fallback";\n';
+     * };
+     *
+     * @param {parserCompiler} compiler
+     * @param {array} [args] Array of parsed arguments on the for the token.
+     * @param {array} [content] Array of content within the token.
+     * @param {array} [parents] Array of parent templates for the current template context.
+     * @param {SwigOpts} [options] Swig Options Object
+     * @param {string} [blockName] Name of the direct block parent, if any.
+     */
+</span>    o = token.compile(exports.compile, token.args ? token.args.slice(0) : [], token.content ? token.content.slice(0) : [], parents
+, options, blockName);
+    out += o || '';
+  });
+
+  return out;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+     * @param {parserCompiler} compiler
+     * @param {array} [args] Array of parsed arguments on the for the token.
+     * @param {array} [content] Array of content within the token.
+     * @param {array} [parents] Array of parent templates for the current template context.
+     * @param {SwigOpts} [options] Swig Options Object
+     * @param {string} [blockName] Name of the direct block parent, if any.
+     */
+    o = token.<span class="apidocCodeKeywordSpan">compile</span>(exports.compile, token.args ? token.args.slice(0) : [], token.content
+ ? token.content.slice(0) : [], parents, options, blockName);
+    out += o || '';
+  });
+
+  return out;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.parser.parse" id="apidoc.element.swig.parser.parse">
+        function <span class="apidocSignatureSpan">swig.parser.</span>parse
+        <span class="apidocSignatureSpan">(swig, source, opts, tags, filters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (swig, source, opts, tags, filters) {
+  source = source.replace(/\r\n/g, '\n');
+  var escape = opts.autoescape,
+    tagOpen = opts.tagControls[0],
+    tagClose = opts.tagControls[1],
+    varOpen = opts.varControls[0],
+    varClose = opts.varControls[1],
+    escapedTagOpen = escapeRegExp(tagOpen),
+    escapedTagClose = escapeRegExp(tagClose),
+    escapedVarOpen = escapeRegExp(varOpen),
+    escapedVarClose = escapeRegExp(varClose),
+    tagStrip = new RegExp('^' + escapedTagOpen + '-?\\s*-?|-?\\s*-?' + escapedTagClose + '$', 'g'),
+    tagStripBefore = new RegExp('^' + escapedTagOpen + '-'),
+    tagStripAfter = new RegExp('-' + escapedTagClose + '$'),
+    varStrip = new RegExp('^' + escapedVarOpen + '-?\\s*-?|-?\\s*-?' + escapedVarClose + '$', 'g'),
+    varStripBefore = new RegExp('^' + escapedVarOpen + '-'),
+    varStripAfter = new RegExp('-' + escapedVarClose + '$'),
+    cmtOpen = opts.cmtControls[0],
+    cmtClose = opts.cmtControls[1],
+    anyChar = '[\\s\\S]*?',
+    // Split the template source based on variable, tag, and comment blocks
+    // /(\{%[\s\S]*?%\}|\{\{[\s\S]*?\}\}|\{#[\s\S]*?#\})/
+    splitter = new RegExp(
+      '(' +
+        escapedTagOpen + anyChar + escapedTagClose + '|' +
+        escapedVarOpen + anyChar + escapedVarClose + '|' +
+        escapeRegExp(cmtOpen) + anyChar + escapeRegExp(cmtClose) +
+        ')'
+    ),
+    line = 1,
+    stack = [],
+    parent = null,
+    tokens = [],
+    blocks = {},
+    inRaw = false,
+    stripNext;
+
+<span class="apidocCodeCommentSpan">  /**
+   * Parse a variable.
+   * @param  {string} str  String contents of the variable, between &lt;i&gt;{{&lt;/i&gt; and &lt;i&gt;}}&lt;/i&gt;
+   * @param  {number} line The line number that this variable starts on.
+   * @return {VarToken}      Parsed variable token object.
+   * @private
+   */
+</span>  function parseVariable(str, line) {
+    var tokens = lexer.read(utils.strip(str)),
+      parser,
+      out;
+
+    parser = new TokenParser(tokens, filters, escape, line, opts.filename);
+    out = parser.parse().join('');
+
+    if (parser.state.length) {
+      utils.throwError('Unable to parse "' + str + '"', line, opts.filename);
+    }
+
+    /**
+     * A parsed variable token.
+     * @typedef {object} VarToken
+     * @property {function} compile Method for compiling this token.
+     */
+    return {
+      compile: function () {
+        return '_output += ' + out + ';\n';
+      }
+    };
+  }
+  exports.parseVariable = parseVariable;
+
+  /**
+   * Parse a tag.
+   * @param  {string} str  String contents of the tag, between &lt;i&gt;{%&lt;/i&gt; and &lt;i&gt;%}&lt;/i&gt;
+   * @param  {number} line The line number that this tag starts on.
+   * @return {TagToken}      Parsed token object.
+   * @private
+   */
+  function parseTag(str, line) {
+    var tokens, parser, chunks, tagName, tag, args, last;
+
+    if (utils.startsWith(str, 'end')) {
+      last = stack[stack.length - 1];
+      if (last &amp;&amp; last.name === str.split(/\s+/)[0].replace(/^end/, '') &amp;&amp; last.ends) {
+        switch (last.name) {
+        case 'autoescape':
+          escape = opts.autoescape;
+          break;
+        case 'raw':
+          inRaw = false;
+          break;
+        }
+        stack.pop();
+        return;
+      }
+
+      if (!inRaw) {
+        utils.throwError('Unexpected end of tag "' + str.replace(/^end/, '') + '"', line, opts.filename);
+      }
+    }
+
+    if (inRaw) {
+      return;
+    }
+
+    chunks = str.split(/\s+(.+)?/);
+    tagName = chunks.shift();
+
+    if (!tags.hasOwnProperty(tagName)) {
+      utils.throwError('Unexpected tag "' + str + '"', line, opts.filename);
+    }
+
+    tokens = lexer.read(utils.strip(chunks.join(' ')));
+    parser = new TokenParser(tokens, filters, false, line, opts.filename);
+    tag = tags[tagName];
+
+    /**
+     * Define custom parsing methods for your tag.
+     * @callback parse
+     *
+     * @example
+     * exports.parse = function (str, line, parser, types, options, swig) {
+     *   parser.on('start', function () {
+     *     // ...
+     *   });
+     *   parser.on(types.STRING, function (token) {
+     *     // ...
+     *   });
+     * };
+     *
+     * @param {string} str The full token string of the tag.
+     * @param {number} line ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ }
+};
+
+/**
+* Parse a source string into tokens that are ready for compilation.
+*
+* @example
+* exports.<span class="apidocCodeKeywordSpan">parse</span>('{{ tacos }}', {}, tags, filters);
+* // =&gt; [{ compile: [Function], ... }]
+*
+* @params {object} swig    The current Swig instance
+* @param  {string} source  Swig template source.
+* @param  {object} opts    Swig options object.
+* @param  {object} tags    Keyed object of tags that can be parsed and compiled.
+* @param  {object} filters Keyed object of filters that may be applied to variables.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.swig.utils" id="apidoc.module.swig.utils">module swig.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.swig.utils.each" id="apidoc.element.swig.utils.each">
+        function <span class="apidocSignatureSpan">swig.utils.</span>each
+        <span class="apidocSignatureSpan">(obj, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">each = function (obj, fn) {
+  var i, l;
+
+  if (isArray(obj)) {
+    i = 0;
+    l = obj.length;
+    for (i; i &lt; l; i += 1) {
+      if (fn(obj[i], i, obj) === false) {
+        break;
+      }
+    }
+  } else {
+    for (i in obj) {
+      if (obj.hasOwnProperty(i)) {
+        if (fn(obj[i], i, obj) === false) {
+          break;
+        }
+      }
+    }
+  }
+
+  return obj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  },
+  d = this;
+
+d.date = d.dateZ = (arguments.length &gt; 1) ? new Date(Date.UTC.apply(Date, arguments) + ((new Date()).getTimezoneOffset() *
+60000)) : (arguments.length === 1) ? new Date(new Date(arguments['0'])) : new Date();
+
+d.timezoneOffset = d.dateZ.getTimezoneOffset();
+
+utils.<span class="apidocCodeKeywordSpan">each</span>(members.z, function (name) {
+  d[name] = function () {
+    return d.dateZ[name]();
+  };
+});
+utils.each(members['default'], function (name) {
+  d[name] = function () {
+    return d.date[name]();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.utils.endsWith" id="apidoc.element.swig.utils.endsWith">
+        function <span class="apidocSignatureSpan">swig.utils.</span>endsWith
+        <span class="apidocSignatureSpan">(str, suffix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">endsWith = function (str, suffix) {
+  return str.indexOf(suffix, str.length - suffix.length) !== -1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var token, lines, stripPrev, prevToken, prevChildToken;
+
+if (!chunk) {
+  return;
+}
+
+// Is a variable?
+if (!inRaw &amp;&amp; utils.startsWith(chunk, varOpen) &amp;&amp; utils.<span class="apidocCodeKeywordSpan">endsWith</span>(
+chunk, varClose)) {
+  stripPrev = varStripBefore.test(chunk);
+  stripNext = varStripAfter.test(chunk);
+  token = parseVariable(chunk.replace(varStrip, ''), line);
+// Is a tag?
+} else if (utils.startsWith(chunk, tagOpen) &amp;&amp; utils.endsWith(chunk, tagClose)) {
+  stripPrev = tagStripBefore.test(chunk);
+  stripNext = tagStripAfter.test(chunk);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.utils.extend" id="apidoc.element.swig.utils.extend">
+        function <span class="apidocSignatureSpan">swig.utils.</span>extend
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function () {
+  var args = arguments,
+    target = args[0],
+    objs = (args.length &gt; 1) ? Array.prototype.slice.call(args, 1) : [],
+    i = 0,
+    l = objs.length,
+    key,
+    obj;
+
+  for (i; i &lt; l; i += 1) {
+    obj = objs[i] || {};
+    for (key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        target[key] = obj[key];
+      }
+    }
+  }
+  return target;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  utils.each(input, function (value) {
+if (!value.hasOwnProperty(key)) {
+  return;
+}
+
+var keyname = value[key],
+  newVal = utils.<span class="apidocCodeKeywordSpan">extend</span>({}, value);
+delete value[key];
+
+if (!out[keyname]) {
+  out[keyname] = [];
+}
+
+out[keyname].push(value);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.utils.isArray" id="apidoc.element.swig.utils.isArray">
+        function <span class="apidocSignatureSpan">swig.utils.</span>isArray
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isArray() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @return {*}
+ * @private
+ */
+function iterateFilter(input) {
+var self = this,
+  out = {};
+
+if (utils.<span class="apidocCodeKeywordSpan">isArray</span>(input)) {
+  return utils.map(input, function (value) {
+    return self.apply(null, arguments);
+  });
+}
+
+if (typeof input === 'object') {
+  utils.each(input, function (value, key) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.utils.keys" id="apidoc.element.swig.utils.keys">
+        function <span class="apidocSignatureSpan">swig.utils.</span>keys
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">keys = function (obj) {
+  if (!obj) {
+    return [];
+  }
+
+  if (Object.keys) {
+    return Object.keys(obj);
+  }
+
+  return exports.map(obj, function (v, k) {
+    return k;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * // T
+ *
+ * @param  {*} input
+ * @return {*}        The first item of the array or first character of the string input.
+ */
+exports.first = function (input) {
+if (typeof input === 'object' &amp;&amp; !utils.isArray(input)) {
+  var keys = utils.<span class="apidocCodeKeywordSpan">keys</span>(input);
+  return input[keys[0]];
+}
+
+if (typeof input === 'string') {
+  return input.substr(0, 1);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.utils.map" id="apidoc.element.swig.utils.map">
+        function <span class="apidocSignatureSpan">swig.utils.</span>map
+        <span class="apidocSignatureSpan">(obj, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">map = function (obj, fn) {
+  var i = 0,
+    result = [],
+    l;
+
+  if (isArray(obj)) {
+    l = obj.length;
+    for (i; i &lt; l; i += 1) {
+      result[i] = fn(obj[i], i);
+    }
+  } else {
+    for (i in obj) {
+      if (obj.hasOwnProperty(i)) {
+        result[i] = fn(obj[i], i);
+      }
+    }
+  }
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @private
+ */
+function iterateFilter(input) {
+var self = this,
+  out = {};
+
+if (utils.isArray(input)) {
+  return utils.<span class="apidocCodeKeywordSpan">map</span>(input, function (value) {
+    return self.apply(null, arguments);
+  });
+}
+
+if (typeof input === 'object') {
+  utils.each(input, function (value, key) {
+    out[key] = self.apply(null, arguments);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.utils.some" id="apidoc.element.swig.utils.some">
+        function <span class="apidocSignatureSpan">swig.utils.</span>some
+        <span class="apidocSignatureSpan">(obj, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">some = function (obj, fn) {
+  var i = 0,
+    result,
+    l;
+  if (isArray(obj)) {
+    l = obj.length;
+
+    for (i; i &lt; l; i += 1) {
+      result = fn(obj[i], i, obj);
+      if (result) {
+        break;
+      }
+    }
+  } else {
+    exports.each(obj, function (value, index) {
+      result = fn(value, index, obj);
+      return !(result);
+    });
+  }
+  return !!result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param  {string} str String chunk.
+ * @return {LexerToken}     Defined type, potentially stripped or replaced with more suitable content.
+ * @private
+ */
+function reader(str) {
+  var matched;
+
+  utils.<span class="apidocCodeKeywordSpan">some</span>(rules, function (rule) {
+    return utils.some(rule.regex, function (regex) {
+var match = str.match(regex),
+  normalized;
+
+if (!match) {
+  return;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.utils.startsWith" id="apidoc.element.swig.utils.startsWith">
+        function <span class="apidocSignatureSpan">swig.utils.</span>startsWith
+        <span class="apidocSignatureSpan">(str, prefix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startsWith = function (str, prefix) {
+  return str.indexOf(prefix) === 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   * @param  {number} line The line number that this tag starts on.
+   * @return {TagToken}      Parsed token object.
+   * @private
+   */
+  function parseTag(str, line) {
+var tokens, parser, chunks, tagName, tag, args, last;
+
+if (utils.<span class="apidocCodeKeywordSpan">startsWith</span>(str, 'end')) {
+  last = stack[stack.length - 1];
+  if (last &amp;&amp; last.name === str.split(/\s+/)[0].replace(/^end/, '') &amp;&amp; last.ends) {
+    switch (last.name) {
+    case 'autoescape':
+      escape = opts.autoescape;
+      break;
+    case 'raw':
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.utils.strip" id="apidoc.element.swig.utils.strip">
+        function <span class="apidocSignatureSpan">swig.utils.</span>strip
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">strip = function (input) {
+  return input.replace(/^\s+|\s+$/g, '');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   * Parse a variable.
+   * @param  {string} str  String contents of the variable, between &lt;i&gt;{{&lt;/i&gt; and &lt;i&gt;}}&lt;/i&gt;
+;
+   * @param  {number} line The line number that this variable starts on.
+   * @return {VarToken}      Parsed variable token object.
+   * @private
+   */
+  function parseVariable(str, line) {
+var tokens = lexer.read(utils.<span class="apidocCodeKeywordSpan">strip</span>(str)),
+  parser,
+  out;
+
+parser = new TokenParser(tokens, filters, escape, line, opts.filename);
+out = parser.parse().join('');
+
+if (parser.state.length) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.utils.throwError" id="apidoc.element.swig.utils.throwError">
+        function <span class="apidocSignatureSpan">swig.utils.</span>throwError
+        <span class="apidocSignatureSpan">(message, line, file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">throwError = function (message, line, file) {
+  if (line) {
+    message += ' on line ' + line;
+  }
+  if (file) {
+    message += ' in file ' + file;
+  }
+  throw new Error(message + '.');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+case _t.BOOL:
+  self.filterApplyIdx.push(self.out.length);
+  self.out.push(match);
+  break;
+
+case _t.FILTER:
+  if (!self.filters.hasOwnProperty(match) || typeof self.filters[match] !== "function") {
+    utils.<span class="apidocCodeKeywordSpan">throwError</span>('Invalid filter "' + match + '"',
+self.line, self.filename);
+  }
+  self.escape = self.filters[match].safe ? false : self.escape;
+  self.out.splice(self.filterApplyIdx[self.filterApplyIdx.length - 1], 0, '_filters["' + match + '"](&amp;#
+x27;);
+  self.state.push(token.type);
+  break;
+
+case _t.FILTEREMPTY:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
