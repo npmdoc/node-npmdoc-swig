@@ -189,6 +189,12 @@
 
         <li>
 
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan"></span>swig</span>
+
+        </li>
+
+        <li>
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">swig.</span>dateformatter</span>
 
         </li>
@@ -821,6 +827,148 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.swig.swig">module swig.swig</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.swig.Swig">
+            function <span class="apidocSignatureSpan">swig.swig.</span>Swig
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.swig.compile">
+            function <span class="apidocSignatureSpan">swig.swig.</span>compile
+            <span class="apidocSignatureSpan">(source, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.swig.compileFile">
+            function <span class="apidocSignatureSpan">swig.swig.</span>compileFile
+            <span class="apidocSignatureSpan">(pathname, options, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.swig.invalidateCache">
+            function <span class="apidocSignatureSpan">swig.swig.</span>invalidateCache
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.swig.parseFile">
+            function <span class="apidocSignatureSpan">swig.swig.</span>parseFile
+            <span class="apidocSignatureSpan">(pathname, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.swig.precompile">
+            function <span class="apidocSignatureSpan">swig.swig.</span>precompile
+            <span class="apidocSignatureSpan">(source, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.swig.render">
+            function <span class="apidocSignatureSpan">swig.swig.</span>render
+            <span class="apidocSignatureSpan">(source, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.swig.renderFile">
+            function <span class="apidocSignatureSpan">swig.swig.</span>renderFile
+            <span class="apidocSignatureSpan">(pathName, locals, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.swig.run">
+            function <span class="apidocSignatureSpan">swig.swig.</span>run
+            <span class="apidocSignatureSpan">(tpl, locals, filepath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.swig.setDefaultTZOffset">
+            function <span class="apidocSignatureSpan">swig.swig.</span>setDefaultTZOffset
+            <span class="apidocSignatureSpan">(offset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.swig.setDefaults">
+            function <span class="apidocSignatureSpan">swig.swig.</span>setDefaults
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.swig.setExtension">
+            function <span class="apidocSignatureSpan">swig.swig.</span>setExtension
+            <span class="apidocSignatureSpan">(name, object)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.swig.setFilter">
+            function <span class="apidocSignatureSpan">swig.swig.</span>setFilter
+            <span class="apidocSignatureSpan">(name, method)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swig.swig.setTag">
+            function <span class="apidocSignatureSpan">swig.swig.</span>setTag
+            <span class="apidocSignatureSpan">(name, parse, compile, ends, blockLevel)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">swig.swig.</span>loaders</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">swig.swig.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
     <li class="apidocModuleLi"><a href="#apidoc.module.swig.utils">module swig.utils</a><ol>
 
         <li>
@@ -1068,7 +1216,23 @@ code&#x3e;.
     tags[name] = {
       parse: parse,
       compile: compi ...</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+/**
+* Create a new, separate Swig compile/render environment.
+*
+* @example
+* var swig = require(&#x27;swig&#x27;);
+* var myswig = new swig.<span class="apidocCodeKeywordSpan">Swig</span>({varControls: [&#x27;&#x3c;%=&#x27;, &#x27;%&#x3e;&#x27;]});
+* myswig.render(&#x27;Tacos are &#x3c;%= tacos =&#x3e;!&#x27;, { locals: { tacos: &#x27;delicious&#x27; }});
+* // =&#x3e; Tacos are delicious!
+* swig.render(&#x27;Tacos are &#x3c;%= tacos =&#x3e;!&#x27;, { locals: { tacos: &#x27;delicious&#x27; }});
+* // =&#x3e; &#x27;Tacos are &#x3c;%= tacos =&#x3e;!&#x27;
+*
+* @param  {SwigOpts} [opts={}] Swig options object.
+* @return {object}      New Swig environment.
+...</pre></li>
     </ul>
 
 
@@ -1221,7 +1385,23 @@ var output = template({
     self.cache = {};
   }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  self.options.cache.set(key, val);
+}
+
+/**
+ * Clears the in-memory template cache.
+ *
+ * @example
+ * swig.<span class="apidocCodeKeywordSpan">invalidateCache</span>();
+ *
+ * @return {undefined}
+ */
+this.invalidateCache = function () {
+  if (self.options.cache === &#x27;memory&#x27;) {
+    self.cache = {};
+  }
+...</pre></li>
     </ul>
 
 
@@ -1250,7 +1430,23 @@ var output = template({
 
   return self.parse(src, options);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    while (parentName) {
+if (!options || !options.filename) {
+  throw new Error(&#x27;Cannot extend &#x22;&#x27; + parentName + &#x27;&#x22; because current template has no filename.&#x27;);
+}
+
+parentFile = parentFile || options.filename;
+parentFile = self.options.loader.resolve(parentName, parentFile);
+parent = cacheGet(parentFile, options) || self.<span class="apidocCodeKeywordSpan">parseFile</span>(parentFile, utils.extend({},
+options, { filename: parentFile }));
+parentName = parent.parent;
+
+if (parentFiles.indexOf(parentFile) !== -1) {
+  throw new Error(&#x27;Illegal circular extends of &#x22;&#x27; + parentFile + &#x27;&#x22;.&#x27;);
+}
+parentFiles.push(parentFile);
+...</pre></li>
     </ul>
 
 
@@ -1287,7 +1483,23 @@ var output = template({
 
   return { tpl: tpl, tokens: tokens };
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return parents;
+}
+
+/**
+ * Pre-compile a source string into a cache-able template function.
+ *
+ * @example
+ * swig.<span class="apidocCodeKeywordSpan">precompile</span>(&#x27;{{ tacos }}&#x27;);
+ * // =&#x3e; {
+ * //      tpl: function (_swig, _locals, _filters, _utils, _fn) { ... },
+ * //      tokens: {
+ * //        name: undefined,
+ * //        parent: null,
+ * //        tokens: [...],
+ * //        blocks: {}
+...</pre></li>
     </ul>
 
 
@@ -1302,7 +1514,24 @@ var output = template({
     <li>description and source-code<pre class="apidocCodePre">render = function (source, options) {
   return self.compile(source, options)();
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+* Create a new, separate Swig compile/render environment.
+*
+* @example
+* var swig = require(&#x27;swig&#x27;);
+* var myswig = new swig.Swig({varControls: [&#x27;&#x3c;%=&#x27;, &#x27;%&#x3e;&#x27;]});
+* myswig.<span class="apidocCodeKeywordSpan">render</span>(&#x27;Tacos are &#x3c;%= tacos =&#x3e;!&#x27;, { locals: { tacos: &#x27
+;delicious&#x27; }});
+* // =&#x3e; Tacos are delicious!
+* swig.render(&#x27;Tacos are &#x3c;%= tacos =&#x3e;!&#x27;, { locals: { tacos: &#x27;delicious&#x27; }});
+* // =&#x3e; &#x27;Tacos are &#x3c;%= tacos =&#x3e;!&#x27;
+*
+* @param  {SwigOpts} [opts={}] Swig options object.
+* @return {object}      New Swig environment.
+*/
+...</pre></li>
     </ul>
 
 
@@ -1338,7 +1567,23 @@ var output = template({
 
   return self.compileFile(pathName)(locals);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return self.compile(source, options)();
+};
+
+/**
+ * Compile and render a template file for final output. This is most useful for libraries like Express.js.
+ *
+ * @example
+ * swig.<span class="apidocCodeKeywordSpan">renderFile</span>(&#x27;./template.html&#x27;, {}, function (err, output) {
+ *   if (err) {
+ *     throw err;
+ *   }
+ *   console.log(output);
+ * });
+ *
+ * @example
+...</pre></li>
     </ul>
 
 
@@ -1357,7 +1602,24 @@ var output = template({
   }
   return tpl(self, context, filters, utils, efn);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* Run a pre-compiled template function. This is most useful in the browser when you&#x27;ve pre-compiled your templates with the
+ Swig command-line tool.
+*
+* @example
+* $ swig compile ./mytpl.html --wrap-start=&#x22;var mytpl = &#x22; &#x3e; mytpl.js
+* @example
+* &#x3c;script src=&#x22;mytpl.js&#x22;&#x3e;&#x3c;/script&#x3e;
+* &#x3c;script&#x3e;
+*   swig.<span class="apidocCodeKeywordSpan">run</span>(mytpl, {});
+*   // =&#x3e; &#x22;rendered template...&#x22;
+* &#x3c;/script&#x3e;
+*
+* @param  {function} tpl       Pre-compiled Swig template function. Use the Swig CLI to compile your templates.
+* @param  {object} [locals={}] Template variable context.
+* @param  {string} [filepath]  Filename used for caching the template.
+* @return {string}             Rendered output.
+...</pre></li>
     </ul>
 
 
@@ -1388,7 +1650,23 @@ var output = template({
   validateOptions(options);
   defaultInstance.options = utils.extend(defaultInstance.options, options);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+cmtControls: [&#x27;{#&#x27;, &#x27;#}&#x27;],
+locals: {},
+/**
+ * Cache control for templates. Defaults to saving all templates into memory.
+ * @typedef {boolean|string|object} CacheOptions
+ * @example
+ * // Default
+ * swig.<span class="apidocCodeKeywordSpan">setDefaults</span>({ cache: &#x27;memory&#x27; });
+ * @example
+ * // Disables caching in Swig.
+ * swig.setDefaults({ cache: false });
+ * @example
+ * // Custom cache storage and retrieval
+ * swig.setDefaults({
+ *   cache: {
+...</pre></li>
     </ul>
 
 
@@ -1403,7 +1681,25 @@ var output = template({
     <li>description and source-code<pre class="apidocCodePre">setExtension = function (name, object) {
   self.extensions[name] = object;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  };
+};
+
+/**
+ * Add extensions for custom tags. This allows any custom tag to access a globally available methods via a special globally available
+ object, &#x3c;var&#x3e;_ext&#x3c;/var&#x3e;, in templates.
+ *
+ * @example
+ * swig.<span class="apidocCodeKeywordSpan">setExtension</span>(&#x27;trans&#x27;, function (v) { return translate(v); });
+ * function compileTrans(compiler, args, content, parent, options) {
+ *   return &#x27;_output += _ext.trans(&#x27; + args[0] + &#x27;);&#x27;
+ * };
+ * swig.setTag(&#x27;trans&#x27;, parseTrans, compileTrans, true);
+ *
+ * @param  {string} name   Key name of the extension. Accessed via &#x3c;code data-language=&#x22;js&#x22;&#x3e;_ext[name]&#x3c;/
+code&#x3e;.
+ * @param  {*}      object The method, value, or object that should be available via the given name.
+...</pre></li>
     </ul>
 
 
@@ -1466,8 +1762,29 @@ var output = template({
     block: !!blockLevel
   };
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  /**
+* Add a custom tag. To expose your own extensions to compiled template code, see &#x3c;code data-language=&#x22;js&#x22;&#x3e;swig
+.setExtension&#x3c;/code&#x3e;.
+*
+* For a more in-depth explanation of writing custom tags, see &#x3c;a href=&#x22;../extending/#tags&#x22;&#x3e;Custom Tags&#x3c;/
+a&#x3e;.
+*
+* @example
+* var tacotag = require(&#x27;./tacotag&#x27;);
+* swig.<span class="apidocCodeKeywordSpan">setTag</span>(&#x27;tacos&#x27;, tacotag.parse, tacotag.compile, tacotag.ends, tacotag
+.blockLevel);
+* // =&#x3e; {% tacos %}Make this be tacos.{% endtacos %}
+* // =&#x3e; Tacos tacos tacos tacos.
+*
+* @param  {string} name      Tag name.
+* @param  {function} parse   Method for parsing tokens.
+* @param  {function} compile Method for compiling renderable output.
+* @param  {boolean} [ends=false]     Whether or not this tag requires an &#x3c;i&#x3e;end&#x3c;/i&#x3e; tag.
+...</pre></li>
     </ul>
+
+
 
 
 
@@ -2845,7 +3162,24 @@ if (parser.state.length) {
 
   return ret;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+cache: &#x27;memory&#x27;,
+/**
+ * Configure Swig to use either the &#x3c;var&#x3e;swig.loaders.fs&#x3c;/var&#x3e; or &#x3c;var&#x3e;swig.loaders.memory&#x3c;/var
+&#x3e; template loader. Or, you can write your own!
+ * For more information, please see the &#x3c;a href=&#x22;../loaders/&#x22;&#x3e;Template Loaders documentation&#x3c;/a&#x3e;.
+ * @typedef {class} TemplateLoader
+ * @example
+ * // Default, FileSystem loader
+ * swig.setDefaults({ loader: swig.loaders.<span class="apidocCodeKeywordSpan">fs</span>() });
+ * @example
+ * // FileSystem loader allowing a base path
+ * // With this, you don&#x27;t use relative URLs in your template references
+ * swig.setDefaults({ loader: swig.loaders.fs(__dirname + &#x27;/templates&#x27;) });
+ * @example
+ * // Memory Loader
+ * swig.setDefaults({ loader: swig.loaders.memory({
+...</pre></li>
     </ul>
 
 
@@ -2906,7 +3240,23 @@ if (parser.state.length) {
 
   return ret;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   * swig.setDefaults({ loader: swig.loaders.fs() });
+   * @example
+   * // FileSystem loader allowing a base path
+   * // With this, you don&#x27;t use relative URLs in your template references
+   * swig.setDefaults({ loader: swig.loaders.fs(__dirname + &#x27;/templates&#x27;) });
+   * @example
+   * // Memory Loader
+   * swig.setDefaults({ loader: swig.loaders.<span class="apidocCodeKeywordSpan">memory</span>({
+   *   layout: &#x27;{% block foo %}{% endblock %}&#x27;,
+   *   page1: &#x27;{% extends &#x22;layout&#x22; %}{% block foo %}Tacos!{% endblock %}&#x27;
+   * })});
+   */
+  loader: loaders.fs()
+},
+defaultInstance;
+...</pre></li>
     </ul>
 
 
@@ -3135,6 +3485,732 @@ if (parser.state.length) {
 * @param  {object} filters Keyed object of filters that may be applied to variables.
 ...</pre></li>
     </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.swig.swig" id="apidoc.module.swig.swig">module swig.swig</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.swig.swig.Swig" id="apidoc.element.swig.swig.Swig">
+        function <span class="apidocSignatureSpan">swig.swig.</span>Swig
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Swig = function (opts) {
+  validateOptions(opts);
+  this.options = utils.extend({}, defaultOptions, opts || {});
+  this.cache = {};
+  this.extensions = {};
+  var self = this,
+    tags = _tags,
+    filters = _filters;
+
+<span class="apidocCodeCommentSpan">  /**
+   * Get combined locals context.
+   * @param  {?SwigOpts} [options] Swig options object.
+   * @return {object}         Locals context.
+   * @private
+   */
+</span>  function getLocals(options) {
+    if (!options || !options.locals) {
+      return self.options.locals;
+    }
+
+    return utils.extend({}, self.options.locals, options.locals);
+  }
+
+  /**
+   * Determine whether caching is enabled via the options provided and/or defaults
+   * @param  {SwigOpts} [options={}] Swig Options Object
+   * @return {boolean}
+   * @private
+   */
+  function shouldCache(options) {
+    options = options || {};
+    return (options.hasOwnProperty(&#x27;cache&#x27;) &#x26;&#x26; !options.cache) || !self.options.cache;
+  }
+
+  /**
+   * Get compiled template from the cache.
+   * @param  {string} key           Name of template.
+   * @return {object|undefined}     Template function and tokens.
+   * @private
+   */
+  function cacheGet(key, options) {
+    if (shouldCache(options)) {
+      return;
+    }
+
+    if (self.options.cache === &#x27;memory&#x27;) {
+      return self.cache[key];
+    }
+
+    return self.options.cache.get(key);
+  }
+
+  /**
+   * Store a template in the cache.
+   * @param  {string} key Name of template.
+   * @param  {object} val Template function and tokens.
+   * @return {undefined}
+   * @private
+   */
+  function cacheSet(key, options, val) {
+    if (shouldCache(options)) {
+      return;
+    }
+
+    if (self.options.cache === &#x27;memory&#x27;) {
+      self.cache[key] = val;
+      return;
+    }
+
+    self.options.cache.set(key, val);
+  }
+
+  /**
+   * Clears the in-memory template cache.
+   *
+   * @example
+   * swig.invalidateCache();
+   *
+   * @return {undefined}
+   */
+  this.invalidateCache = function () {
+    if (self.options.cache === &#x27;memory&#x27;) {
+      self.cache = {};
+    }
+  };
+
+  /**
+   * Add a custom filter for swig variables.
+   *
+   * @example
+   * function replaceMs(input) { return input.replace(/m/g, &#x27;f&#x27;); }
+   * swig.setFilter(&#x27;replaceMs&#x27;, replaceMs);
+   * // =&#x3e; {{ &#x22;onomatopoeia&#x22;|replaceMs }}
+   * // =&#x3e; onofatopeia
+   *
+   * @param {string}    name    Name of filter, used in templates. &#x3c;strong&#x3e;Will&#x3c;/strong&#x3e; overwrite previously defined filters, if
+ using the same name.
+   * @param {function}  method  Function that acts against the input. See &#x3c;a href=&#x22;/docs/filters/#custom&#x22;&#x3e;Custom Filters&#x3c;/a&#x3e; for
+ more information.
+   * @return {undefined}
+   */
+  this.setFilter = function (name, method) {
+    if (typeof method !== &#x22;function&#x22;) {
+      throw new Error(&#x27;Filter &#x22;&#x27; + name + &#x27;&#x22; is not a valid function.&#x27;);
+    }
+    filters[name] = method;
+  };
+
+  /**
+   * Add a custom tag. To expose your own extensions to compiled template code, see &#x3c;code data-language=&#x22;js&#x22;&#x3e;swig.setExtension&#x3c;/
+code&#x3e;.
+   *
+   * For a more in-depth explanation of writing custom tags, see &#x3c;a href=&#x22;../extending/#tags&#x22;&#x3e;Custom Tags&#x3c;/a&#x3e;.
+   *
+   * @example
+   * var tacotag = require(&#x27;./tacotag&#x27;);
+   * swig.setTag(&#x27;tacos&#x27;, tacotag.parse, tacotag.compile, tacotag.ends, tacotag.blockLevel);
+   * // =&#x3e; {% tacos %}Make this be tacos.{% endtacos %}
+   * // =&#x3e; Tacos tacos tacos tacos.
+   *
+   * @param  {string} name      Tag name.
+   * @param  {function} parse   Method for parsing tokens.
+   * @param  {function} compile Method for compiling renderable output.
+   * @param  {boolean} [ends=false]     Whether or not this tag requires an &#x3c;i&#x3e;end&#x3c;/i&#x3e; tag.
+   * @param  {boolean} [blockLevel=false] If false, this tag will not be compiled outside of &#x3c;code&#x3e;block&#x3c;/code&#x3e; tags when extending
+ a parent template.
+   * @return {undefined}
+   */
+  this.setTag = function (name, parse, compile, ends, blockLevel) {
+    if (typeof parse !== &#x27;function&#x27;) {
+      throw new Error(&#x27;Tag &#x22;&#x27; + name + &#x27;&#x22; parse method is not a valid function.&#x27;);
+    }
+
+    if (typeof compile !== &#x27;function&#x27;) {
+      throw new Error(&#x27;Tag &#x22;&#x27; + name + &#x27;&#x22; compile method is not a valid function.&#x27;);
+    }
+
+    tags[name] = {
+      parse: parse,
+      compile: compi ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+/**
+* Create a new, separate Swig compile/render environment.
+*
+* @example
+* var swig = require(&#x27;swig&#x27;);
+* var myswig = new swig.<span class="apidocCodeKeywordSpan">Swig</span>({varControls: [&#x27;&#x3c;%=&#x27;, &#x27;%&#x3e;&#x27;]});
+* myswig.render(&#x27;Tacos are &#x3c;%= tacos =&#x3e;!&#x27;, { locals: { tacos: &#x27;delicious&#x27; }});
+* // =&#x3e; Tacos are delicious!
+* swig.render(&#x27;Tacos are &#x3c;%= tacos =&#x3e;!&#x27;, { locals: { tacos: &#x27;delicious&#x27; }});
+* // =&#x3e; &#x27;Tacos are &#x3c;%= tacos =&#x3e;!&#x27;
+*
+* @param  {SwigOpts} [opts={}] Swig options object.
+* @return {object}      New Swig environment.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.swig.compile" id="apidoc.element.swig.swig.compile">
+        function <span class="apidocSignatureSpan">swig.swig.</span>compile
+        <span class="apidocSignatureSpan">(source, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compile = function (source, options) {
+  var key = options ? options.filename : null,
+    cached = key ? cacheGet(key, options) : null,
+    context,
+    contextLength,
+    pre;
+
+  if (cached) {
+    return cached;
+  }
+
+  context = getLocals(options);
+  contextLength = utils.keys(context).length;
+  pre = this.precompile(source, options);
+
+  function compiled(locals) {
+    var lcls;
+    if (locals &#x26;&#x26; contextLength) {
+      lcls = utils.extend({}, context, locals);
+    } else if (locals &#x26;&#x26; !contextLength) {
+      lcls = locals;
+    } else if (!locals &#x26;&#x26; contextLength) {
+      lcls = context;
+    } else {
+      lcls = {};
+    }
+    return pre.tpl(self, lcls, filters, utils, efn);
+  }
+
+  utils.extend(compiled, pre.tokens);
+
+  if (key) {
+    cacheSet(key, options, compiled);
+  }
+
+  return compiled;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+     * @param {parserCompiler} compiler
+     * @param {array} [args] Array of parsed arguments on the for the token.
+     * @param {array} [content] Array of content within the token.
+     * @param {array} [parents] Array of parent templates for the current template context.
+     * @param {SwigOpts} [options] Swig Options Object
+     * @param {string} [blockName] Name of the direct block parent, if any.
+     */
+    o = token.<span class="apidocCodeKeywordSpan">compile</span>(exports.compile, token.args ? token.args.slice(0) : [], token.content
+ ? token.content.slice(0) : [], parents, options, blockName);
+    out += o || &#x27;&#x27;;
+  });
+
+  return out;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.swig.compileFile" id="apidoc.element.swig.swig.compileFile">
+        function <span class="apidocSignatureSpan">swig.swig.</span>compileFile
+        <span class="apidocSignatureSpan">(pathname, options, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compileFile = function (pathname, options, cb) {
+  var src, cached;
+
+  if (!options) {
+    options = {};
+  }
+
+  pathname = self.options.loader.resolve(pathname, options.resolveFrom);
+  if (!options.filename) {
+    options = utils.extend({ filename: pathname }, options);
+  }
+  cached = cacheGet(pathname, options);
+
+  if (cached) {
+    if (cb) {
+      cb(null, cached);
+      return;
+    }
+    return cached;
+  }
+
+  if (cb) {
+    self.options.loader.load(pathname, function (err, src) {
+      if (err) {
+        cb(err);
+        return;
+      }
+      var compiled;
+
+      try {
+        compiled = self.compile(src, options);
+      } catch (err2) {
+        cb(err2);
+        return;
+      }
+
+      cb(err, compiled);
+    });
+    return;
+  }
+
+  src = self.options.loader.load(pathname);
+  return self.compile(src, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+&#x3c;/ul&#x3e;
+```
+
+### node.js code
+
+```js
+var swig  = require(&#x27;swig&#x27;);
+var template = swig.<span class="apidocCodeKeywordSpan">compileFile</span>(&#x27;/absolute/path/to/template.html&#x27;);
+var output = template({
+    pagename: &#x27;awesome people&#x27;,
+    authors: [&#x27;Paul&#x27;, &#x27;Jim&#x27;, &#x27;Jane&#x27;]
+});
+```
+
+### Output
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.swig.invalidateCache" id="apidoc.element.swig.swig.invalidateCache">
+        function <span class="apidocSignatureSpan">swig.swig.</span>invalidateCache
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">invalidateCache = function () {
+  if (self.options.cache === &#x27;memory&#x27;) {
+    self.cache = {};
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  self.options.cache.set(key, val);
+}
+
+/**
+ * Clears the in-memory template cache.
+ *
+ * @example
+ * swig.<span class="apidocCodeKeywordSpan">invalidateCache</span>();
+ *
+ * @return {undefined}
+ */
+this.invalidateCache = function () {
+  if (self.options.cache === &#x27;memory&#x27;) {
+    self.cache = {};
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.swig.parseFile" id="apidoc.element.swig.swig.parseFile">
+        function <span class="apidocSignatureSpan">swig.swig.</span>parseFile
+        <span class="apidocSignatureSpan">(pathname, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseFile = function (pathname, options) {
+  var src;
+
+  if (!options) {
+    options = {};
+  }
+
+  pathname = self.options.loader.resolve(pathname, options.resolveFrom);
+
+  src = self.options.loader.load(pathname);
+
+  if (!options.filename) {
+    options = utils.extend({ filename: pathname }, options);
+  }
+
+  return self.parse(src, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    while (parentName) {
+if (!options || !options.filename) {
+  throw new Error(&#x27;Cannot extend &#x22;&#x27; + parentName + &#x27;&#x22; because current template has no filename.&#x27;);
+}
+
+parentFile = parentFile || options.filename;
+parentFile = self.options.loader.resolve(parentName, parentFile);
+parent = cacheGet(parentFile, options) || self.<span class="apidocCodeKeywordSpan">parseFile</span>(parentFile, utils.extend({},
+options, { filename: parentFile }));
+parentName = parent.parent;
+
+if (parentFiles.indexOf(parentFile) !== -1) {
+  throw new Error(&#x27;Illegal circular extends of &#x22;&#x27; + parentFile + &#x27;&#x22;.&#x27;);
+}
+parentFiles.push(parentFile);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.swig.precompile" id="apidoc.element.swig.swig.precompile">
+        function <span class="apidocSignatureSpan">swig.swig.</span>precompile
+        <span class="apidocSignatureSpan">(source, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">precompile = function (source, options) {
+  var tokens = self.parse(source, options),
+    parents = getParents(tokens, options),
+    tpl,
+    err;
+
+  if (parents.length) {
+    // Remap the templates first-parent&#x27;s tokens using this template&#x27;s blocks.
+    tokens.tokens = remapBlocks(tokens.blocks, parents[0].tokens);
+    importNonBlocks(tokens.blocks, tokens.tokens);
+  }
+
+  try {
+    tpl = new Function(&#x27;_swig&#x27;, &#x27;_ctx&#x27;, &#x27;_filters&#x27;, &#x27;_utils&#x27;, &#x27;_fn&#x27;,
+      &#x27;  var _ext = _swig.extensions,\n&#x27; +
+      &#x27;    _output = &#x22;&#x22;;\n&#x27; +
+      parser.compile(tokens, parents, options) + &#x27;\n&#x27; +
+      &#x27;  return _output;\n&#x27;
+      );
+  } catch (e) {
+    utils.throwError(e, null, options.filename);
+  }
+
+  return { tpl: tpl, tokens: tokens };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return parents;
+}
+
+/**
+ * Pre-compile a source string into a cache-able template function.
+ *
+ * @example
+ * swig.<span class="apidocCodeKeywordSpan">precompile</span>(&#x27;{{ tacos }}&#x27;);
+ * // =&#x3e; {
+ * //      tpl: function (_swig, _locals, _filters, _utils, _fn) { ... },
+ * //      tokens: {
+ * //        name: undefined,
+ * //        parent: null,
+ * //        tokens: [...],
+ * //        blocks: {}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.swig.render" id="apidoc.element.swig.swig.render">
+        function <span class="apidocSignatureSpan">swig.swig.</span>render
+        <span class="apidocSignatureSpan">(source, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">render = function (source, options) {
+  return self.compile(source, options)();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+* Create a new, separate Swig compile/render environment.
+*
+* @example
+* var swig = require(&#x27;swig&#x27;);
+* var myswig = new swig.Swig({varControls: [&#x27;&#x3c;%=&#x27;, &#x27;%&#x3e;&#x27;]});
+* myswig.<span class="apidocCodeKeywordSpan">render</span>(&#x27;Tacos are &#x3c;%= tacos =&#x3e;!&#x27;, { locals: { tacos: &#x27
+;delicious&#x27; }});
+* // =&#x3e; Tacos are delicious!
+* swig.render(&#x27;Tacos are &#x3c;%= tacos =&#x3e;!&#x27;, { locals: { tacos: &#x27;delicious&#x27; }});
+* // =&#x3e; &#x27;Tacos are &#x3c;%= tacos =&#x3e;!&#x27;
+*
+* @param  {SwigOpts} [opts={}] Swig options object.
+* @return {object}      New Swig environment.
+*/
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.swig.renderFile" id="apidoc.element.swig.swig.renderFile">
+        function <span class="apidocSignatureSpan">swig.swig.</span>renderFile
+        <span class="apidocSignatureSpan">(pathName, locals, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">renderFile = function (pathName, locals, cb) {
+  if (cb) {
+    self.compileFile(pathName, {}, function (err, fn) {
+      var result;
+
+      if (err) {
+        cb(err);
+        return;
+      }
+
+      try {
+        result = fn(locals);
+      } catch (err2) {
+        cb(err2);
+        return;
+      }
+
+      cb(null, result);
+    });
+    return;
+  }
+
+  return self.compileFile(pathName)(locals);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return self.compile(source, options)();
+};
+
+/**
+ * Compile and render a template file for final output. This is most useful for libraries like Express.js.
+ *
+ * @example
+ * swig.<span class="apidocCodeKeywordSpan">renderFile</span>(&#x27;./template.html&#x27;, {}, function (err, output) {
+ *   if (err) {
+ *     throw err;
+ *   }
+ *   console.log(output);
+ * });
+ *
+ * @example
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.swig.run" id="apidoc.element.swig.swig.run">
+        function <span class="apidocSignatureSpan">swig.swig.</span>run
+        <span class="apidocSignatureSpan">(tpl, locals, filepath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function (tpl, locals, filepath) {
+  var context = getLocals({ locals: locals });
+  if (filepath) {
+    cacheSet(filepath, {}, tpl);
+  }
+  return tpl(self, context, filters, utils, efn);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* Run a pre-compiled template function. This is most useful in the browser when you&#x27;ve pre-compiled your templates with the
+ Swig command-line tool.
+*
+* @example
+* $ swig compile ./mytpl.html --wrap-start=&#x22;var mytpl = &#x22; &#x3e; mytpl.js
+* @example
+* &#x3c;script src=&#x22;mytpl.js&#x22;&#x3e;&#x3c;/script&#x3e;
+* &#x3c;script&#x3e;
+*   swig.<span class="apidocCodeKeywordSpan">run</span>(mytpl, {});
+*   // =&#x3e; &#x22;rendered template...&#x22;
+* &#x3c;/script&#x3e;
+*
+* @param  {function} tpl       Pre-compiled Swig template function. Use the Swig CLI to compile your templates.
+* @param  {object} [locals={}] Template variable context.
+* @param  {string} [filepath]  Filename used for caching the template.
+* @return {string}             Rendered output.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.swig.setDefaultTZOffset" id="apidoc.element.swig.swig.setDefaultTZOffset">
+        function <span class="apidocSignatureSpan">swig.swig.</span>setDefaultTZOffset
+        <span class="apidocSignatureSpan">(offset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setDefaultTZOffset = function (offset) {
+  dateformatter.tzOffset = offset;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.swig.setDefaults" id="apidoc.element.swig.swig.setDefaults">
+        function <span class="apidocSignatureSpan">swig.swig.</span>setDefaults
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setDefaults = function (options) {
+  validateOptions(options);
+  defaultInstance.options = utils.extend(defaultInstance.options, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+cmtControls: [&#x27;{#&#x27;, &#x27;#}&#x27;],
+locals: {},
+/**
+ * Cache control for templates. Defaults to saving all templates into memory.
+ * @typedef {boolean|string|object} CacheOptions
+ * @example
+ * // Default
+ * swig.<span class="apidocCodeKeywordSpan">setDefaults</span>({ cache: &#x27;memory&#x27; });
+ * @example
+ * // Disables caching in Swig.
+ * swig.setDefaults({ cache: false });
+ * @example
+ * // Custom cache storage and retrieval
+ * swig.setDefaults({
+ *   cache: {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.swig.setExtension" id="apidoc.element.swig.swig.setExtension">
+        function <span class="apidocSignatureSpan">swig.swig.</span>setExtension
+        <span class="apidocSignatureSpan">(name, object)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setExtension = function (name, object) {
+  self.extensions[name] = object;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  };
+};
+
+/**
+ * Add extensions for custom tags. This allows any custom tag to access a globally available methods via a special globally available
+ object, &#x3c;var&#x3e;_ext&#x3c;/var&#x3e;, in templates.
+ *
+ * @example
+ * swig.<span class="apidocCodeKeywordSpan">setExtension</span>(&#x27;trans&#x27;, function (v) { return translate(v); });
+ * function compileTrans(compiler, args, content, parent, options) {
+ *   return &#x27;_output += _ext.trans(&#x27; + args[0] + &#x27;);&#x27;
+ * };
+ * swig.setTag(&#x27;trans&#x27;, parseTrans, compileTrans, true);
+ *
+ * @param  {string} name   Key name of the extension. Accessed via &#x3c;code data-language=&#x22;js&#x22;&#x3e;_ext[name]&#x3c;/
+code&#x3e;.
+ * @param  {*}      object The method, value, or object that should be available via the given name.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.swig.setFilter" id="apidoc.element.swig.swig.setFilter">
+        function <span class="apidocSignatureSpan">swig.swig.</span>setFilter
+        <span class="apidocSignatureSpan">(name, method)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setFilter = function (name, method) {
+  if (typeof method !== &#x22;function&#x22;) {
+    throw new Error(&#x27;Filter &#x22;&#x27; + name + &#x27;&#x22; is not a valid function.&#x27;);
+  }
+  filters[name] = method;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*
+* To disable auto-escaping on a custom filter, simply add a property to the filter method `safe = true;` and the output from this
+ will not be escaped, no matter what the global settings are for Swig.
+*
+* @typedef {function} Filter
+*
+* @example
+* // This filter will return &#x27;bazbop&#x27; if the idx on the input is not &#x27;foobar&#x27;
+* swig.<span class="apidocCodeKeywordSpan">setFilter</span>(&#x27;foobar&#x27;, function (input, idx) {
+*   return input[idx] === &#x27;foobar&#x27; ? input[idx] : &#x27;bazbop&#x27;;
+* });
+* // myvar = [&#x27;foo&#x27;, &#x27;bar&#x27;, &#x27;baz&#x27;, &#x27;bop&#x27;];
+* // =&#x3e; {{ myvar|foobar(3) }}
+* // Since myvar[3] !== &#x27;foobar&#x27;, we render:
+* // =&#x3e; bazbop
+*
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.swig.swig.setTag" id="apidoc.element.swig.swig.setTag">
+        function <span class="apidocSignatureSpan">swig.swig.</span>setTag
+        <span class="apidocSignatureSpan">(name, parse, compile, ends, blockLevel)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setTag = function (name, parse, compile, ends, blockLevel) {
+  if (typeof parse !== &#x27;function&#x27;) {
+    throw new Error(&#x27;Tag &#x22;&#x27; + name + &#x27;&#x22; parse method is not a valid function.&#x27;);
+  }
+
+  if (typeof compile !== &#x27;function&#x27;) {
+    throw new Error(&#x27;Tag &#x22;&#x27; + name + &#x27;&#x22; compile method is not a valid function.&#x27;);
+  }
+
+  tags[name] = {
+    parse: parse,
+    compile: compile,
+    ends: ends || false,
+    block: !!blockLevel
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  /**
+* Add a custom tag. To expose your own extensions to compiled template code, see &#x3c;code data-language=&#x22;js&#x22;&#x3e;swig
+.setExtension&#x3c;/code&#x3e;.
+*
+* For a more in-depth explanation of writing custom tags, see &#x3c;a href=&#x22;../extending/#tags&#x22;&#x3e;Custom Tags&#x3c;/
+a&#x3e;.
+*
+* @example
+* var tacotag = require(&#x27;./tacotag&#x27;);
+* swig.<span class="apidocCodeKeywordSpan">setTag</span>(&#x27;tacos&#x27;, tacotag.parse, tacotag.compile, tacotag.ends, tacotag
+.blockLevel);
+* // =&#x3e; {% tacos %}Make this be tacos.{% endtacos %}
+* // =&#x3e; Tacos tacos tacos tacos.
+*
+* @param  {string} name      Tag name.
+* @param  {function} parse   Method for parsing tokens.
+* @param  {function} compile Method for compiling renderable output.
+* @param  {boolean} [ends=false]     Whether or not this tag requires an &#x3c;i&#x3e;end&#x3c;/i&#x3e; tag.
+...</pre></li>
+    </ul>
+
+
+
+
 
 
 </div>
