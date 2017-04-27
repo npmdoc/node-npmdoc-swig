@@ -1,6 +1,6 @@
 # npmdoc-swig
 
-#### api documentation for  [swig (v1.4.2)](https://github.com/paularmstrong/swig)  [![npm package](https://img.shields.io/npm/v/npmdoc-swig.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-swig) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-swig.svg)](https://travis-ci.org/npmdoc/node-npmdoc-swig)
+#### basic api documentation for  [swig (v1.4.2)](https://github.com/paularmstrong/swig)  [![npm package](https://img.shields.io/npm/v/npmdoc-swig.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-swig) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-swig.svg)](https://travis-ci.org/npmdoc/node-npmdoc-swig)
 
 #### A simple, powerful, and extendable templating engine for node.js and browsers, similar to Django, Jinja2, and Twig.
 
